@@ -1,0 +1,341 @@
+topic: ~quiz_dlg()
+language: fif
+
+concept:(correct) \pau=500\ ^rand[^start(animations/Stand/Emotions/Positive/Confident_1) ^start(animations/Stand/Emotions/Positive/Optimistic_1) ^start(animations/Stand/Gestures/Yes_3) ^start(animations/Stand/Gestures/Yes_2) ^start(animations/Stand/Gestures/Yes_1) ^start(animations/Stand/Gestures/Joy_1) ^start(animations/Stand/Gestures/Enthusiastic_1)] ^rand[aivan oikein täsmälleen hienoa mahtavaa] \pau=1000\
+concept:(wrong) \pau=500\ ^rand[^start(animations/Stand/Gestures/No_1) ^start(animations/Stand/BodyTalk/Thinking/ThinkingLoop_1) ^start(animations/Stand/Emotions/Negative/Anxious_1) ^start(animations/Stand/Waiting/HideHands_1) ^start(animations/Stand/Gestures/Reject_1) ^start(animations/Stand/Gestures/Desperate_3)] ^rand["ei ihan" "tällä kertaa ei osunut oikeaan" "tämä olikin hankala kysymys" "sinne päin" "lähelle meni" "katsotaanpa oikea vastaus"] \pau=1000\
+concept:(affirmation) [kyllä joo tahdon haluan toki juu]
+concept:(answer_yes) ^rand[mahtavaa selvä]
+concept:(denial) [ei en]
+concept:(start_quiz)  Aloitetaan tietovisa. Jos tahdot lopettaa tietovisan, paina yläoikealla olevaa ruksia.
+concept:(more) \pau=1000\ Jatketaanko \pau=200\ vai ^rand[tahtoisitko haluatko] ^rand["että kerron" tietää kuulla] kohteesta ^rand[enemmän lisää]?
+
+concept:(q1) Mikä museo on kyseessä?
+concept:(q2) Mikä kaunis kohde?
+concept:(q3) Mikä paikka?
+concept:(q4) Mikä historiallinen rakennus?
+concept:(q5) Mikä järvi on kuvassa?
+concept:(q6) Mikä rakennus?
+concept:(q7) Kuinka korkea tämä rakennus on?
+concept:(q8) Mikä Särkänniemen elämyspuiston huvilaite?
+concept:(q9) Mistä tämä Hugo Simbergin fresko löytyy?
+concept:(q10) Mikä paikka?
+concept:(q11) Mikä kesäkohde Pyhäjärvessä?
+concept:(q12) Mikä uusi kaupunginosa?
+concept:(q13) Mikä silta?
+concept:(q14) Mikä uimaranta?
+concept:(q15) Missä rakennuksessa tämä museo nykyään sijaitsee?
+
+concept:(q1i) \pau=1000\ Amurin työläismuseossa voi tutustua tamperelaiseen työväestön elämään, 1800-luvun lopusta, 1970-luvulle asti \pau=1000\
+concept:(q2i) \pau=1000\ Hatanpään kartanon ympäristössä on kaunis puistoalue eli arboretum järven rannalla. \pau=1000\
+concept:(q3i) \pau=1000\ Kauppahalli on Hämeenkadun varrella. Sieltä voit ostaa vaikka mustaamakkaraa! \pau=1000\
+concept:(q4i) \pau=1000\ Näsilinnassa on Museo Milavida, kahvila sekä kaunis puisto ympärillä. Voit ihailla matkalla kaunista Finlaysonin aluetta tai poiketa Tallipihalla. \pau=1000\
+concept:(q5i) \pau=1000\ Pyhäjärven maisemia voit ihailla Pispalan rinteiltä. Joissain paikoissa voit nähdä myös Pispalan harjun toisella puolella sijaitsevan Näsijärven. \pau=1000\
+concept:(q6i) \pau=1000\ Ylämäkeen kivutessa saat samalla päivän kuntoiluannoksen. Sen jälkeen voit maistaa kahvilassa kuuluisia näkötornin munkkeja! \pau=1000\
+concept:(q7i) \pau=1000\ Tiesitkö, että Pispalan haulitorni täyttää tänä vuonna satakymmenen vuotta? \pau=1000\
+concept:(q8i) \pau=1000\ Särkänniemen elämyspuistosta löydät huvipuiston lisäksi myös planetaarion, akvaarion, Näsinneulan sekä sisähuvipuisto SuperParkin. Särkänniemeen kannattaa mennä myös sateisena päivänä! \pau=1000\
+concept:(q9i) \pau=1000\ Tuomiokirkko on myös ulkoapäin katsottuna upea! \pau=1000\
+concept:(q10i) \pau=1000\ Pispalan uittotunnelia pitkin oli tarkoitus uittaa puutavaraa nippuina Näsijärvestä Pyhäjärveen. Tukinuittoon sitä ei kuitenkaan tarvittu, vaan se säilyi käyttämättömänä yli neljäkymmentä vuotta, kunnes se otettiin käyttöön viisi vuotta sitten veneiden kuljetustunnelina sekä kävelijöiden ja pyöräilijöiden kulkuväylänä. \pau=1000\
+concept:(q11i) \pau=1000\ Viikinsaaresta löytyy ravintolan lisäksi myös uimarantoja, yleinen sauna ja luontopolku, joten se on oikein mukava kohde päiväretkelle! \pau=1000\
+concept:(q12i) \pau=1000\ Hiedanranta on uusi kaupunginosa, joka on vasta kehittymässä. Siellä on kesällä esimerkiksi monimuotoisia festivaaleja, puistopilatesta ja puutarhajuhlia. \pau=1000\
+concept:(q13i) \pau=1000\ Aunessilta on entisen Teiskon kunnan alueella Kämmenniemen kaupunginosassa sijaitseva graniittinen, yli sata vuotta sitten valmistunut silta. Se ylittää Paarlahden sisämaavuonon Näsijärvessä. \pau=1000\
+concept:(q14i) \pau=1000\ Rauhaniemessä on myös yksi Tampereen yleisistä saunoista, jotka ovat todella suosittuja ihmisten keskuudessa. Meille roboteille saunominen ja uiminen ei oikein sovi! \pau=1000\
+concept:(q15i) \pau=1000\ Muumimuseossa viihtyvät niin lapset, aikuiset kuin robotitkin! \pau=1000\
+
+
+u:(e:onStart) $html="fin/quiz-start-fin.html" ^gotoReactivate(intro)
+ 
+proposal: %intro Olen käynyt tutustumassa Tampereen nähtävyyksiin ja otin paljon kuvia retkiltäni. Haluatko arvailla, mistä kuvat on otettu?
+    u1:(~affirmation) ~start_quiz ^gotoReactivate(start)
+    u1:(~denial) Joku toinen kerta $onStopped=1
+    u1:(e:orientation/answerContinue) ~start_quiz ^gotoReactivate(start)
+    u1:(e:orientation/answerStop) $onStopped=1
+
+proposal: %start \pau=500\ Ensimmäinen kysymys kuuluu ^gotoReactivate(next_q)
+
+proposal: %counter $orientation/asked=1
+
+u:(e:orientation/next) ^gotoReactivate(next)
+proposal: %next \pau=500\ Jatketaan \pau=1000\ Seuraava kysymys kuuluu  ^gotoReactivate(next_q)
+
+proposal: %next_q ^gotoRandom(question)
+
+u:(e:orientation/allAsked) ^gotoReactivate(end)
+proposal: %end Kiitos pelaamisesta
+    u1:([kiitos lopeta "hei hei" "oli mukava pelata" "kiitti"]) $Orientation/Exit=1   
+
+u:(e:orientation/answerContinue) ^gotoReactivate(counter)
+
+#Q1
+proposal: %question $html="fin/quiz1.html" ~q1
+    #Button answers
+    u1:(e:orientation/answerRight) ~correct kuva on Amurista ^gotoReactivate(info1)
+    u1:(e:orientation/answerWrong) ~wrong Kuva on Amurista ^gotoReactivate(info1)
+    #Voice answers
+    u1:([Lauri Viidan synnyinkoti])     $voice_ans="fin/quiz1_ans.html" $orientation/answerWrong=1 ~wrong ^gotoReactivate(info1)
+    u1:([Amuri amurista työläismuseo])  $voice_ans="fin/quiz1_ans.html" $orientation/answerRight=1 ~correct ^gotoReactivate(info1)   
+    u1:([Tallipiha])                    $voice_ans="fin/quiz1_ans.html" $orientation/answerWrong=1 ~wrong ^gotoReactivate(info1)
+proposal: %info1 ~more
+    #Button input
+    u1:(e:orientation/info) ~q1i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz1_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+
+#Q2
+proposal: %question $html="fin/quiz2.html" ~q2
+    #button answers
+    u1:(e:orientation/answerRight) ~correct Hatanpään kartano ^gotoReactivate(info2)
+    u1:(e:orientation/answerWrong) ~wrong Kuvassa on Hatanpään kartano ^gotoReactivate(info2)
+    #voice answers
+    u1:([hatanpää hatanpään])                 $voice_ans="fin/quiz2_ans.html" $orientation/answerRight=1 ~correct Hatanpään kartano ^gotoReactivate(info2)
+    u1:([viikinsaari viikinsaaren ravintola]) $voice_ans="fin/quiz2_ans.html" $orientation/answerWrong=1 ~wrong Kuvassa on Hatanpään kartano  ^gotoReactivate(info2)
+    u1:([Haiharan haihara])                 $voice_ans="fin/quiz2_ans.html" $orientation/answerWrong=1 ~wrong Kuvassa on Hatanpään kartano ^gotoReactivate(info2)  
+proposal: %info2 ~more
+    #Button input
+    u1:(e:orientation/info) ~q2i
+         u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz2_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+
+#Q3 
+proposal: %question $html="fin/quiz3.html" ~q3
+    #button answers
+    u1:(e:orientation/answerRight) ~correct Kauppahalli ^gotoReactivate(info3)
+    u1:(e:orientation/answerWrong) ~wrong Tässä olen kauppahallissa ^gotoReactivate(info3)
+    #voice answers
+    u1:([sokos sokoksella sokoksessa])        $voice_ans="fin/quiz3_ans.html" ~wrong $orientation/answerWrong=1 Tässä olen kauppahallissa ^gotoReactivate(info3)
+    u1:([Ratina kauppakeskus])                $voice_ans="fin/quiz3_ans.html" ~wrong $orientation/answerWrong=1 Tässä olen kauppahallissa  ^gotoReactivate(info3)
+    u1:([Kauppahalli])                 $voice_ans="fin/quiz3_ans.html" ~correct $orientation/answerRight=1 Kauppahalli ^gotoReactivate(info3)  
+proposal: %info3 ~more
+    #Button input
+    u1:(e:orientation/info) ~q3i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz3_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    
+#Q4 
+proposal: %question $html="fin/quiz4.html" ~q4
+    #button answers
+    u1:(e:orientation/answerRight) ~correct Näsilinna ^gotoReactivate(info4)
+    u1:(e:orientation/answerWrong) ~wrong Tässä on näsilinna ^gotoReactivate(info4)
+    #voice answers
+    u1:([pyynikki pyynikinlinna])             $voice_ans="fin/quiz4_ans.html" ~wrong $orientation/answerWrong=1 Kuvassa on näsilinna ^gotoReactivate(info4)
+    u1:([Näsilinna])                          $voice_ans="fin/quiz4_ans.html" ~correct $orientation/answerRight=1 näsilinna  ^gotoReactivate(info4)
+    u1:([Hatanpää kartano])                   $voice_ans="fin/quiz4_ans.html" ~wrong $orientation/answerWrong=1 Kuvassa on näsilinna ^gotoReactivate(info4)  
+proposal: %info4 ~more
+    #Button input
+    u1:(e:orientation/info) ~q4i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz4_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+           
+#Q5 
+proposal: %question $html="fin/quiz5.html" ~q5
+    u1:(e:orientation/answerRight) ~correct Pyhäjärvi ^gotoReactivate(info5)
+    u1:(e:orientation/answerWrong) ~wrong kuvassa on pyhäjärvi ^gotoReactivate(info5)
+    #voice answers
+    u1:([pyhäjärvi pyhä])             $voice_ans="fin/quiz5_ans.html" ~correct Pyhäjärvi $orientation/answerRight=1 ^gotoReactivate(info5)
+    u1:([näsijärvi])                  $voice_ans="fin/quiz5_ans.html" ~wrong kuvassa on pyhäjärvi $orientation/answerWrong=1 ^gotoReactivate(info5)
+    u1:([särkijärvi])                 $voice_ans="fin/quiz5_ans.html" ~wrong kuvassa on pyhäjärvi $orientation/answerWrong=1 ^gotoReactivate(info5) 
+proposal: %info5 ~more
+    #Button input
+    u1:(e:orientation/info) ~q5i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz5_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    
+#Q6 
+proposal: %question $html="fin/quiz6.html" ~q6
+    u1:(e:orientation/answerRight) ~correct Pyynikin Näkötorni ^gotoReactivate(info6)
+    u1:(e:orientation/answerWrong) ~wrong Tämä on pyynikin näkötorni ^gotoReactivate(info6)
+    #voice answers
+    u1:([kauppi "kaupin tähtitorni" tähtitorni])             $voice_ans="fin/quiz6_ans.html" ~wrong Pyynikin Näkötorni $orientation/answerWrong=1 ^gotoReactivate(info6)
+    u1:([pyynikki "pyynikin näkötorni" näkötorni pyynikin])  $voice_ans="fin/quiz6_ans.html" ~correct  Tämä on pyynikin näkötorni $orientation/answerRight=1 ^gotoReactivate(info6)
+    u1:(["hervannan vesitorni" vesitorni hervanta])          $voice_ans="fin/quiz6_ans.html" ~wrong  Tämä on pyynikin näkötorni $orientation/answerWrong=1 ^gotoReactivate(info6) 
+proposal: %info6 ~more
+    #Button input
+    u1:(e:orientation/info) ~q6i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz6_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q7 
+proposal: %question $html="fin/quiz7.html" ~q7
+    u1:(e:orientation/answerRight) ~correct Aika korkea eikö vain^gotoReactivate(info7)
+    u1:(e:orientation/answerWrong) ~wrong Haulitorni on 55 metriä korkea ^gotoReactivate(info7)
+    #voice answers
+    u1:([32 kolmekymmentäkaksi "kolme kymmentä kaksi"])    $voice_ans="fin/quiz7_ans.html" ~wrong Haulitorni on 55 metriä korkea $orientation/answerWrong=1 ^gotoReactivate(info7)
+    u1:([46 neljäkymmentäkuusi "neljä kymmentä kuusi"])    $voice_ans="fin/quiz7_ans.html" ~wrong Haulitorni on 55 metriä korkea $orientation/answerWrong=1 ^gotoReactivate(info7)
+    u1:([55 viisikymmentäviisi "viisi kymmentä viisi"])    $voice_ans="fin/quiz7_ans.html" ~correct Aika korkea eikö vain $orientation/answerRight=1 ^gotoReactivate(info7) 
+proposal: %info7 ~more
+    #Button input
+    u1:(e:orientation/info) ~q7i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz7_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q8 
+proposal: %question $html="fin/quiz8.html" ~q8
+    u1:(e:orientation/answerRight) ~correct Tukkijoki ^gotoReactivate(info8)
+    u1:(e:orientation/answerWrong) ~wrong Tämä on tukkijoki ^gotoReactivate(info8)
+    #voice answers
+    u1:([tyrsky])             $voice_ans="fin/quiz8_ans.html" ~wrong Tämä on tukkijoki $orientation/answerWrong=1 ^gotoReactivate(info8)
+    u1:([koskiseikkailu])     $voice_ans="fin/quiz8_ans.html" ~wrong Tämä on tukkijoki $orientation/answerWrong=1 ^gotoReactivate(info8)
+    u1:([tukkijoki])          $voice_ans="fin/quiz8_ans.html" ~correct Tukkijoki $orientation/answerRight=1 ^gotoReactivate(info8) 
+proposal: %info8 ~more
+    #Button input
+    u1:(e:orientation/info) ~q8i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz8_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q9 
+proposal: %question $html="fin/quiz9.html" ~q9
+    u1:(e:orientation/answerRight) ~correct Se on tuomiokirkossa^gotoReactivate(info9)
+    u1:(e:orientation/answerWrong) ~wrong Fresko on tuomiokirkossa ^gotoReactivate(info9)
+    #voice answers
+    u1:([tuomiokirkko tuomiokirkossa])              $voice_ans="fin/quiz9_ans.html" ~correct Se on tuomiokirkossa $orientation/answerRight=1 ^gotoReactivate(info9)
+    u1:(["sara hildenin taidemuseo" sara hildenin]) $voice_ans="fin/quiz9_ans.html" ~wrong Fresko on tuomiokirkossa $orientation/answerWrong=1 ^gotoReactivate(info9)
+    u1:(["tampereen taidemuseo"])                   $voice_ans="fin/quiz9_ans.html" ~wrong Fresko on tuomiokirkossa $orientation/answerWrong=1 ^gotoReactivate(info9) 
+proposal: %info9 ~more
+    #Button input
+    u1:(e:orientation/info) ~q9i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz9_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q10 
+proposal: %question $html="fin/quiz10.html" ~q10
+    u1:(e:orientation/answerRight) ~correct Pispalan uittotunneli ^gotoReactivate(info10)
+    u1:(e:orientation/answerWrong) ~wrong Tässä on uittotunneli Pispalassa ^gotoReactivate(info10)
+    #voice answers
+    u1:([rantatunneli])                              $voice_ans="fin/quiz10_ans.html" ~wrong Tässä on uittotunneli Pispalassa $orientation/answerWrong=1 ^gotoReactivate(info10)
+    u1:(["Pispalan uittotunneli" uittotunneli])      $voice_ans="fin/quiz10_ans.html" ~correct Pispalan uittotunneli $orientation/answerRight=1 ^gotoReactivate(info10)
+    u1:(["Liisankallion väestönsuoja" väestönsuoja]) $voice_ans="fin/quiz10_ans.html" ~wrong Tässä on uittotunneli Pispalassa $orientation/answerWrong=1 ^gotoReactivate(info10) 
+proposal: %info10 ~more
+    #Button input
+    u1:(e:orientation/info) ~q10i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz10_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q11 
+proposal: %question $html="fin/quiz11.html" ~q11
+    u1:(e:orientation/answerRight) ~correct Viikinsaaren ravintola ^gotoReactivate(info11)
+    u1:(e:orientation/answerWrong) ~wrong Kuvassa on Viikinsaaren ravintola ^gotoReactivate(info11)
+    #voice answers
+    u1:(["hatanpään kartano"])             $voice_ans="fin/quiz11_ans.html" ~wrong Kuvassa on Viikinsaaren ravintola $orientation/answerWrong=1 ^gotoReactivate(info11)
+    u1:(["Viikinsaaren ravintola"])        $voice_ans="fin/quiz11_ans.html" ~correct Viikinsaaren ravintola $orientation/answerRight=1 ^gotoReactivate(info11)
+    u1:(["haiharan kartano"])              $voice_ans="fin/quiz11_ans.html" ~wrong Kuvassa on Viikinsaaren ravintola $orientation/answerWrong=1 ^gotoReactivate(info11) 
+proposal: %info11 ~more
+    #Button input
+    u1:(e:orientation/info) ~q11i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz11_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q12 
+proposal: %question $html="fin/quiz12.html" ~q12
+    u1:(e:orientation/answerRight) ~correct Hiedanranta^gotoReactivate(info12)
+    u1:(e:orientation/answerWrong) ~wrong Kuva on Hiedanrannasta ^gotoReactivate(info12)
+    #voice answers
+    u1:([vuores])             $voice_ans="fin/quiz12_ans.html" ~wrong Hiedanranta $orientation/answerWrong=1 ^gotoReactivate(info12)
+    u1:([hiedanranta])        $voice_ans="fin/quiz12_ans.html" ~correct Kuva on Hiedanrannasta $orientation/answerRight=1 ^gotoReactivate(info12)
+    u1:([härmälänranta])      $voice_ans="fin/quiz12_ans.html" ~wrong Kuva on Hiedanrannasta $orientation/answerWrong=1 ^gotoReactivate(info12) 
+proposal: %info12 ~more
+    #Button input
+    u1:(e:orientation/info) ~q12i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz12_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q13 
+proposal: %question $html="fin/quiz13.html" ~q13
+    u1:(e:orientation/answerRight) ~correct Aunessilta^gotoReactivate(info13)
+    u1:(e:orientation/answerWrong) ~wrong Tämä on aunessilta ^gotoReactivate(info13)
+    #voice answers
+    u1:([aunessilta])                                 $voice_ans="fin/quiz13_ans.html" ~correct Aunessilta $orientation/answerRight=1 ^gotoReactivate(info13)
+    u1:(["särkijärven silta" särkijärvi])             $voice_ans="fin/quiz13_ans.html" ~wrong Tämä on aunessilta $orientation/answerWrong=1 ^gotoReactivate(info13)
+    u1:(["palatsinraitin silta" palatsinraitti])      $voice_ans="fin/quiz13_ans.html" ~wrong Tämä on aunessilta $orientation/answerWrong=1 ^gotoReactivate(info13) 
+proposal: %info13 ~more
+    #Button input
+    u1:(e:orientation/info) ~q13i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz13_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q14 
+proposal: %question $html="fin/quiz14.html" ~q14
+    u1:(e:orientation/answerRight) ~correct rauhaniemen uimaranta ^gotoReactivate(info14)
+    u1:(e:orientation/answerWrong) ~wrong Kuvassa on Rauhaniemen uimaranta ^gotoReactivate(info14)
+    #voice answers
+    u1:(["pyynikin uimaranta" pyynikki])             $voice_ans="fin/quiz14_ans.html" ~wrong Kuvassa on Rauhaniemen uimaranta $orientation/answerWrong=1 ^gotoReactivate(info14)
+    u1:(["kaukajärven uimala" kaukajärvi])           $voice_ans="fin/quiz14_ans.html" ~wrong Kuvassa on Rauhaniemen uimaranta $orientation/answerWrong=1 ^gotoReactivate(info14)
+    u1:(["rauhaniemen uimaranta" rauhaniemi])        $voice_ans="fin/quiz14_ans.html" ~correct rauhaniemen uimaranta $orientation/answerRight=1 ^gotoReactivate(info14) 
+proposal: %info14 ~more
+    #Button input
+    u1:(e:orientation/info) ~q14i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz14_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+        
+#Q15 
+proposal: %question $html="fin/quiz15.html" ~q15
+    u1:(e:orientation/answerRight) ~correct se on tampere-talossa ^gotoReactivate(info15)
+    u1:(e:orientation/answerWrong) ~wrong Muumi museo sijaitsee Tampere-talossa ^gotoReactivate(info15)
+    #voice answers
+    u1:(["tampere talossa"])                                 $voice_ans="fin/quiz15_ans.html" ~correct se on tampere-talossa $orientation/answerRight=1 ^gotoReactivate(info15)
+    u1:(["tampereen taidemuseossa" "tampereen taidemuseo"])  $voice_ans="fin/quiz15_ans.html" ~wrong Muumi museo sijaitsee Tampere-talossa $orientation/answerWrong=1 ^gotoReactivate(info15)
+    u1:(["pääkirjasto metso" "pääkirjasto metsossa"])        $voice_ans="fin/quiz15_ans.html" ~wrong Muumi museo sijaitsee Tampere-talossa $orientation/answerWrong=1 ^gotoReactivate(info15) 
+proposal: %info15 ~more
+    #Button input
+    u1:(e:orientation/info) ~q15i
+        u2:([jatka tietovisaa jatketaan seuraava]) ^gotoReactivate(counter)
+    u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
+    #Voice input
+    u1:([lisätietoa kerro lisää]) $voice_ans="fin/quiz15_info.html"
+        u2:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)
+    u1:([jatka tietovisaa jatketaan]) ^gotoReactivate(counter)

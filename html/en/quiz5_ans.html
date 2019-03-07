@@ -1,0 +1,104 @@
+<!doctype html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+	<head>
+			<meta charset="utf-8">
+			<title>TTY-Robot</title>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta content='width=1280, user-scalable=0' name='viewport' />
+			<script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+		
+			<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Ubuntu" rel="stylesheet"> 
+		
+		<link rel="apple-touch-icon" sizes="57x57" href="<?= SITEPATH ?>img/ico/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<?= SITEPATH ?>img/ico/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<?= SITEPATH ?>img/ico/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?= SITEPATH ?>img/ico/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<?= SITEPATH ?>img/ico/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?= SITEPATH ?>img/ico/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<?= SITEPATH ?>img/ico/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?= SITEPATH ?>img/ico/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?= SITEPATH ?>img/ico/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="<?= SITEPATH ?>img/ico/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?= SITEPATH ?>img/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="<?= SITEPATH ?>img/ico/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?= SITEPATH ?>img/ico/favicon-16x16.png">
+		<link rel="manifest" href="<?= SITEPATH ?>img/ico/manifest.json">
+
+	<link href="../site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="../site/css/style.css" rel="stylesheet" type="text/css">	
+		<script src="../site/js/bootstrap.min.js"></script>
+		<link href="../site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+	</head>
+	
+
+<body id="quiz-page-5" class="bg-secondary quiz">
+	<header class="section1">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-2">
+					<h2 class="quiz-progress"><span id="question"></span>/8</h2>
+				</div>
+				<div class="col-xs-8">
+					<h2 id="qtitle" class="quiz-title">Pyhäjärvi</h2>
+				</div>
+				<nav class="col-xs-2">	
+					<a onmouseup="exit()" class="float-right"><i class="text-shadow fas fa-times-circle fa-3x"></i></a>
+				</nav>	
+			</div>
+		</div>	
+	</header>	
+		<div class="container" style="width:80%;position:fixed;bottom:10px;margin-left:10%">
+			
+			<div class="row">
+				<div id="after_question" class="col-sm-12 flex-parent buttonarea wrap" style="display:block">
+					<button type="submit" onmouseup="yes_clicked()">Next<br>question</button>
+					<button type="submit" id="more_button" onmouseup="more_clicked()">More<br>info</button>
+				</div>
+			</div>
+	</div>
+	
+	<script>
+		var session = new QiSession();
+		var audio = new Audio('../change_screen.ogg');
+		
+		document.getElementById("question").innerHTML = getUrlVars()["question"];
+		
+		function getUrlVars() {
+			var vars = {};
+			var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+				vars[key] = value;
+			});
+			
+			return vars;
+		}
+		
+		function yes_clicked(){
+			audio.play();
+			session.service('ALMemory').done(function(ALMemory) {
+				ALMemory.raiseEvent("orientation/silence", 1);
+				ALMemory.raiseEvent("orientation/answerContinue", 0);
+			});
+		}
+		
+		function exit(){
+			audio.play();
+			session.service('ALMemory').done(function(ALMemory) {
+				ALMemory.raiseEvent("orientation/silence", 1);
+				ALMemory.raiseEvent("Orientation/Exit", 0);
+			});
+		}
+		
+		function more_clicked(){
+			audio.play();
+			document.getElementById("more_button").style.display = 'none';
+			document.getElementById("qtitle").innerHTML = '<h2>Pyhäjärvi</h2><h3>Pyhäjärvi reaches the regions of Tampere, Vesilahti, Nokia, Pirkkala, Lempäälä and Akaa.</h3>';
+			session.service('ALMemory').done(function(ALMemory) {
+				ALMemory.raiseEvent("orientation/silence", 1);
+				ALMemory.raiseEvent("orientation/say_info", "You can admire the scenery of Pyhäjärvi from the hillsides of Pispala. From some places you can even see Näsijärvi on the other side of the Pispala ridge.");
+			});
+		}
+		
+	</script>
+	
+</body>
+</html>

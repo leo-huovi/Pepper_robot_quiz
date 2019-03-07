@@ -1,0 +1,96 @@
+<!doctype html>
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
+	<head>
+			<meta charset="utf-8">
+			<title>TTY-Robot</title>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta content='width=1280, user-scalable=0' name='viewport' />
+			<script src="/libs/qimessaging/1.0/qimessaging.js"></script>
+		
+	<link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Ubuntu" rel="stylesheet"> 
+		
+		<link rel="apple-touch-icon" sizes="57x57" href="<?= SITEPATH ?>img/ico/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<?= SITEPATH ?>img/ico/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<?= SITEPATH ?>img/ico/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?= SITEPATH ?>img/ico/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<?= SITEPATH ?>img/ico/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?= SITEPATH ?>img/ico/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<?= SITEPATH ?>img/ico/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?= SITEPATH ?>img/ico/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?= SITEPATH ?>img/ico/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="<?= SITEPATH ?>img/ico/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?= SITEPATH ?>img/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="<?= SITEPATH ?>img/ico/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?= SITEPATH ?>img/ico/favicon-16x16.png">
+		<link rel="manifest" href="<?= SITEPATH ?>img/ico/manifest.json">
+
+
+		<link href="site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+		<link href="site/css/style.css" rel="stylesheet" type="text/css">	
+		<script src="site/js/bootstrap.min.js"></script>
+		<link href="site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+	</head>
+	
+
+<body id="homepage" class="bg-primary medium-top-padding">
+	<div class="container">
+			<div class="row section-main kielinavi">
+				<div class="col-xs-6 img-right">
+					<a onclick="select_fin()"><img class="lang-fi img-circle whiteoutline box-shadow" src="site/img/flag-fi.png" alt="Suomeksi"></a>
+				</div>
+				<div class="col-xs-6 img-left">
+					<a onclick="select_eng()"><img class="lang-eng img-circle whiteoutline box-shadow" src="site/img/flag-eng.png" alt="In English"></a>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12">
+					<h1>Aloita valitsemalla kieli</h1>
+					<h3>Begin by choosing language</h3>
+				</div>
+			</div>
+	
+	
+	<footer class="section">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+					<img class="center-block" src="site/img/tampereenteknillinenyliopisto-logo.png" alt="Tampereenteknillinen yliopisto">
+				</div>	
+				
+				<div class="col-xs-6 custom-border">
+					<img class="center-block" src="site/img/tampereenkaupunki-logo.png" alt="Tampereenkaupunki">
+				</div>	
+			</div>
+		</div>	
+	</footer>	
+		</div>
+	<script>
+	var session = new QiSession();
+	
+	var audio = new Audio('change_screen.ogg');
+	function select_fin(){
+		audio.play();
+		session.service('ALMemory').done(function(ALMemory) {
+			ALMemory.raiseEvent("orientation/selection", 0);
+		});
+	}
+	
+	function select_eng(){
+		audio.play();
+		session.service('ALMemory').done(function(ALMemory) {
+			ALMemory.raiseEvent("orientation/selection", 1);
+		});
+	}
+	
+	function quit(){
+		audio.play();
+		session.service('ALMemory').done(function(ALMemory) {
+			ALMemory.raiseEvent("Orientation/Exit", 1);
+		});
+	}
+    
+
+  </script>
+</body>
+</html>
