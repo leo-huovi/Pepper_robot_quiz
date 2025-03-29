@@ -8,7 +8,7 @@ import os
 import json
 import argparse
 from pathlib import Path
-from quiz_generator import PepperQuizGenerator
+from .quiz_generator import PepperQuizGenerator
 
 def setup_argument_parser():
     """Set up command line argument parser"""

@@ -4,8 +4,8 @@ Pepper Robot Quiz Generator
 Answer page generator
 """
 
-from base_generator import BasePageGenerator
-from html_utils import get_html_header
+from .base_generator import BasePageGenerator
+from .html_utils import get_html_header
 
 class AnswerPageGenerator(BasePageGenerator):
     """Generator for quiz answer pages"""

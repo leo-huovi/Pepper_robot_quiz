@@ -5,8 +5,8 @@ Info page generator
 """
 
 from pathlib import Path
-from base_generator import BasePageGenerator
-from html_utils import get_html_header
+from .base_generator import BasePageGenerator
+from .html_utils import get_html_header
 
 class InfoPageGenerator(BasePageGenerator):
     """Generator for quiz info pages"""
