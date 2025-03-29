@@ -1,0 +1,68 @@
+{
+    "quiz_pages": [
+        {
+            "question": "Which beach?",
+            "options": [
+                "Pyynikki beach",
+                "Kaukajärvi beach",
+                "Rauhaniemi beach"
+            ],
+            "correct_answer": "Rauhaniemi beach",
+            "title": "Rauhaniemi beach",
+            "subtitle": "You can walk to Rauhaniemi beach in 30 minutes or take bus number 2 to get there.",
+            "info_text": "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans.",
+            "robot_speech": "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans. However, I dare not to go there, because I would melt!",
+            "next_button_image": "../images/next_button.png",
+            "more_button_image": "../images/info_button.png",
+            "option_images": [
+                "../images/pyynikki.jpg",
+                "../images/kaukajarvi.jpg", 
+                "../images/rauhaniemi.jpg"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which building?",
+            "options": [
+                "Kauppi observatory",
+                "Pyynikki observation tower",
+                "Hervanta water tower"
+            ],
+            "correct_answer": "Pyynikki observation tower",
+            "title": "Pyynikki observation tower",
+            "subtitle": "The Pyynikki observation tower offers a panoramic view of Tampere.",
+            "info_text": "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis!",
+            "robot_speech": "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis! They are delicious donuts that humans enjoy eating.",
+            "next_button_image": "../images/next_button.png",
+            "more_button_image": "../images/info_button.png",
+            "body_class": "bg-secondary quiz"
+        }
+    ],
+    "start_page": {
+        "body_class": "bg-primary",
+        "title": "Welcome to the Tampere Quiz!",
+        "subtitle": "I've been visiting different attractions and places in Tampere and I took lots of pictures from my journey. Would you like to guess the places I visited?",
+        "credits": "Pictures: Visit Tampere / Laura Vanzo, Olli-Pekka Latvala ja Kladez Zolota. Editing: Santeri Holappa.",
+        "yes_button_text": "Yes",
+        "no_button_text": "No",
+        "stylesheets": [
+            "../site/css/bootstrap.min.css",
+            "../site/css/style.css",
+            "../site/web-fonts-with-css/css/fontawesome-all.min.css"
+        ]
+    },
+    "sound_file": "change_screen.ogg",
+    "total_questions": 8,
+    "button_images": {
+        "next_button": "next_button.png",
+        "info_button": "info_button.png",
+        "start_button": "start_button.png"
+    },
+    "css_files": [
+        "site_resources/bootstrap.min.css",
+        "site_resources/style.css"
+    ],
+    "js_files": [
+        "site_resources/bootstrap.min.js"
+    ]
+}
