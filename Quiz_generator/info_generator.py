@@ -47,38 +47,38 @@ class InfoPageGenerator(BasePageGenerator):
         <script>
                 var session = new QiSession();
 
-                var audio = new Audio('../change_screen.ogg');
+                var audio = new Audio('../../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"];
                         document.getElementById("qtitle").innerHTML = "<h2>{title}</h2><h3>{info_text}</h3>"
-                session.service('ALMemory').done(function(ALMemory) {
+                session.service('ALMemory').done(function(ALMemory) {{
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("orientation/say_info", "{robot_speech}");
-                });
+                }});
 
-                function getUrlVars() {
-                        var vars = {};
-                        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                function getUrlVars() {{
+                        var vars = {{}};
+                        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {{
                                 vars[key] = value;
-                        });
+                        }});
 
                         return vars;
-                }
+                }}
 
-                function yes_clicked(){
+                function yes_clicked(){{
                         audio.play();
-                        session.service('ALMemory').done(function(ALMemory) {
+                        session.service('ALMemory').done(function(ALMemory) {{
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("orientation/answerContinue", 0);
-                        });
-                }
+                        }});
+                }}
 
-                function exit(){
+                function exit(){{
                         audio.play();
-                        session.service('ALMemory').done(function(ALMemory) {
+                        session.service('ALMemory').done(function(ALMemory) {{
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("Orientation/Exit", 0);
-                        });
-                }
+                        }});
+                }}
 
         </script>
 
@@ -89,6 +89,11 @@ class InfoPageGenerator(BasePageGenerator):
         """Generate the info page shown when the user clicks 'More info'"""
         output_file = self.output_dir / f"quiz{quiz_num}_info.html"
         
+        # Update button image path for consistency
+        next_button_image = quiz_data.get("next_button_image", "../../site/img/next_button.png")
+        if next_button_image.startswith("../images/"):
+            next_button_image = "../../site/img/" + next_button_image.replace("../images/", "")
+        
         # Create template data
         template_data = {
             "quiz_num": quiz_num,
@@ -97,7 +102,7 @@ class InfoPageGenerator(BasePageGenerator):
             "title": quiz_data["title"],
             "info_text": quiz_data["info_text"],
             "robot_speech": quiz_data["robot_speech"],
-            "next_button_image": quiz_data.get("next_button_image", "../images/next_button.png")
+            "next_button_image": next_button_image
         }
         
         # Get HTML header and apply template

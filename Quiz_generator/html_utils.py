@@ -9,16 +9,16 @@ def get_html_header(quiz_num, title, stylesheets=None):
     
     if stylesheets is None:
         stylesheets = [
-            "../site/css/bootstrap.min.css",
-            "../site/css/style.css",
-            "../site/web-fonts-with-css/css/fontawesome-all.min.css"
+            "../../site/css/bootstrap.min.css",
+            "../../site/css/style.css",
+            "../../site/web-fonts-with-css/css/fontawesome-all.min.css"
         ]
     
     stylesheets_html = ""
     for stylesheet in stylesheets:
         stylesheets_html += f'<link href="{stylesheet}" rel="stylesheet" type="text/css">\n'
     
-    return f'''<!doctype html>
+    header = f'''<!doctype html>
         <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fi" lang="fi">
         <head>
                         <meta charset="utf-8">
@@ -45,21 +45,22 @@ def get_html_header(quiz_num, title, stylesheets=None):
                 <link rel="manifest" href="<?= SITEPATH ?>img/ico/manifest.json">
 
         {stylesheets_html}
-                <script src="../site/js/bootstrap.min.js"></script>
+                <script src="../../site/js/bootstrap.min.js"></script>
                 <style>
-                    .img-button {
+                    .img-button {{
                         background: none;
                         border: none;
                         padding: 0;
-                    }
-                    .img-button img {
+                    }}
+                    .img-button img {{
                         max-width: 100%;
                         height: auto;
-                    }
-                    .button-text {
+                    }}
+                    .button-text {{
                         display: block;
                         margin-top: 10px;
-                    }
+                    }}
                 </style>
         </head>
 '''
+    return header

@@ -1,68 +1,199 @@
 {
     "quiz_pages": [
         {
-            "question": "Which beach?",
+            "question": "Which landmark is this?",
             "options": [
-                "Pyynikki beach",
-                "Kaukajärvi beach",
-                "Rauhaniemi beach"
+                "Näsinneula Tower",
+                "Pyynikki Observation Tower",
+                "Tampere Cathedral"
             ],
-            "correct_answer": "Rauhaniemi beach",
-            "title": "Rauhaniemi beach",
-            "subtitle": "You can walk to Rauhaniemi beach in 30 minutes or take bus number 2 to get there.",
-            "info_text": "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans.",
-            "robot_speech": "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans. However, I dare not to go there, because I would melt!",
-            "next_button_image": "../images/next_button.png",
-            "more_button_image": "../images/info_button.png",
+            "correct_answer": "Näsinneula Tower",
+            "title": "Näsinneula Tower",
+            "subtitle": "The tallest observation tower in Finland",
+            "info_text": "Näsinneula is a 168-meter high observation tower in Tampere, making it the tallest free-standing structure in Finland.",
+            "robot_speech": "Näsinneula is a 168-meter high observation tower in Tampere, making it the tallest free-standing structure in Finland. The tower was completed in 1971 and features a revolving restaurant.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
             "option_images": [
-                "../images/pyynikki.jpg",
-                "../images/kaukajarvi.jpg", 
-                "../images/rauhaniemi.jpg"
+                "../../site/img/quiz-bg-1.jpg",
+                "../../site/img/quiz-bg-2.jpg",
+                "../../site/img/quiz-bg-3.jpg"
             ],
             "body_class": "bg-secondary quiz"
         },
         {
-            "question": "Which building?",
+            "question": "Which lake is this?",
             "options": [
-                "Kauppi observatory",
-                "Pyynikki observation tower",
-                "Hervanta water tower"
+                "Lake Näsijärvi",
+                "Lake Pyhäjärvi",
+                "Lake Tohloppi"
             ],
-            "correct_answer": "Pyynikki observation tower",
-            "title": "Pyynikki observation tower",
-            "subtitle": "The Pyynikki observation tower offers a panoramic view of Tampere.",
-            "info_text": "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis!",
-            "robot_speech": "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis! They are delicious donuts that humans enjoy eating.",
-            "next_button_image": "../images/next_button.png",
-            "more_button_image": "../images/info_button.png",
+            "correct_answer": "Lake Näsijärvi",
+            "title": "Lake Näsijärvi",
+            "subtitle": "One of the two major lakes surrounding Tampere",
+            "info_text": "Lake Näsijärvi is located to the north of Tampere and is connected to Lake Pyhäjärvi by the Tammerkoski rapids that flow through the city center.",
+            "robot_speech": "Lake Näsijärvi is located to the north of Tampere and is connected to Lake Pyhäjärvi by the Tammerkoski rapids that flow through the city center. The lake is approximately 257 square kilometers in area.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/quiz-bg-4.jpg",
+                "../../site/img/quiz-bg-5.jpg",
+                "../../site/img/quiz-bg-6.jpg"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which market hall is this?",
+            "options": [
+                "Laukontori Market",
+                "Tampere Market Hall",
+                "Keskustori Market"
+            ],
+            "correct_answer": "Tampere Market Hall",
+            "title": "Tampere Market Hall",
+            "subtitle": "The second oldest market hall in Finland",
+            "info_text": "Tampere Market Hall, opened in 1901, is the second oldest market hall in Finland and hosts numerous food vendors and specialty shops.",
+            "robot_speech": "Tampere Market Hall, opened in 1901, is the second oldest market hall in Finland and hosts numerous food vendors and specialty shops. It's a popular place for both locals and tourists to enjoy traditional Finnish cuisine.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/quiz-bg-7.jpg",
+                "../../site/img/quiz-bg-8.jpg",
+                "../../site/img/quiz-bg-9.jpg"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which museum is this?",
+            "options": [
+                "Vapriikki Museum Centre",
+                "Moomin Museum",
+                "Lenin Museum"
+            ],
+            "correct_answer": "Vapriikki Museum Centre",
+            "title": "Vapriikki Museum Centre",
+            "subtitle": "A museum complex housing several exhibitions",
+            "info_text": "Vapriikki Museum Centre is located in an old factory building and houses several museums, including the Natural History Museum and the Finnish Ice Hockey Museum.",
+            "robot_speech": "Vapriikki Museum Centre is located in an old factory building and houses several museums, including the Natural History Museum and the Finnish Ice Hockey Museum. The name 'Vapriikki' comes from the Swedish word 'fabrik', meaning factory.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/quiz-bg-10.jpg",
+                "../../site/img/quiz-bg-11.jpg",
+                "../../site/img/quiz-bg-12.jpg"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which park is this?",
+            "options": [
+                "Pyynikki Park",
+                "Koskipuisto Park",
+                "Sorsapuisto Park"
+            ],
+            "correct_answer": "Koskipuisto Park",
+            "title": "Koskipuisto Park",
+            "subtitle": "A beautiful park along the Tammerkoski rapids",
+            "info_text": "Koskipuisto Park is located in the center of Tampere, along the banks of the Tammerkoski rapids, offering beautiful views of the water and the surrounding city.",
+            "robot_speech": "Koskipuisto Park is located in the center of Tampere, along the banks of the Tammerkoski rapids, offering beautiful views of the water and the surrounding city. It's a popular spot for relaxation and events during the summer.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/quiz-bg-13.jpg",
+                "../../site/img/quiz-bg-14.jpg",
+                "../../site/img/quiz-bg-15.jpg"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which transportation route is this?",
+            "options": [
+                "Tampere Tram Line",
+                "Number 2 Bus Route",
+                "Lake Cruise Route"
+            ],
+            "correct_answer": "Tampere Tram Line",
+            "title": "Tampere Tram Line",
+            "subtitle": "The newest addition to Tampere's public transportation",
+            "info_text": "The Tampere Tram Line began operations in 2021 and connects key areas of the city, reducing traffic congestion and offering an environmentally friendly transportation option.",
+            "robot_speech": "The Tampere Tram Line began operations in 2021 and connects key areas of the city, reducing traffic congestion and offering an environmentally friendly transportation option. It's known locally as 'Ratikka'.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/reitti1.png",
+                "../../site/img/reitti2.png",
+                "../../site/img/reitti3.png"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which city district is this?",
+            "options": [
+                "Hervanta",
+                "Kaleva",
+                "Pispala"
+            ],
+            "correct_answer": "Pispala",
+            "title": "Pispala",
+            "subtitle": "A historic district known for its wooden houses",
+            "info_text": "Pispala is built on a ridge between two lakes and is known for its colorful wooden houses and steep streets offering spectacular views of Tampere.",
+            "robot_speech": "Pispala is built on a ridge between two lakes and is known for its colorful wooden houses and steep streets offering spectacular views of Tampere. It was historically a working-class district and is now a culturally significant area of the city.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/reitti4.png",
+                "../../site/img/reitti5.png",
+                "../../site/img/reitti6.png"
+            ],
+            "body_class": "bg-secondary quiz"
+        },
+        {
+            "question": "Which Tampere service is this?",
+            "options": [
+                "City Library",
+                "Public Transport Office",
+                "City Information Point"
+            ],
+            "correct_answer": "City Information Point",
+            "title": "City Information Point",
+            "subtitle": "Where to find information about Tampere's services",
+            "info_text": "The City Information Point provides visitors and residents with information about Tampere's services, events, and attractions.",
+            "robot_speech": "The City Information Point provides visitors and residents with information about Tampere's services, events, and attractions. The staff can help with questions about the city and guide you to the right services.",
+            "next_button_image": "../../site/img/scroll_right_icon.jpg",
+            "more_button_image": "../../site/img/pic1.png",
+            "option_images": [
+                "../../site/img/map-joukkoliikenne.png",
+                "../../site/img/map-kassa.png",
+                "../../site/img/map-kotitori.png"
+            ],
             "body_class": "bg-secondary quiz"
         }
     ],
     "start_page": {
         "body_class": "bg-primary",
         "title": "Welcome to the Tampere Quiz!",
-        "subtitle": "I've been visiting different attractions and places in Tampere and I took lots of pictures from my journey. Would you like to guess the places I visited?",
-        "credits": "Pictures: Visit Tampere / Laura Vanzo, Olli-Pekka Latvala ja Kladez Zolota. Editing: Santeri Holappa.",
-        "yes_button_text": "Yes",
-        "no_button_text": "No",
+        "subtitle": "I've been exploring the beautiful city of Tampere and took lots of pictures. Would you like to guess what places and landmarks I visited?",
+        "credits": "Images: Tampere City Tourism Office. Quiz created for the Pepper Robot demonstration.",
+        "yes_button_text": "Yes, let's start!",
+        "no_button_text": "No, thanks",
         "stylesheets": [
-            "../site/css/bootstrap.min.css",
-            "../site/css/style.css",
-            "../site/web-fonts-with-css/css/fontawesome-all.min.css"
+            "../../site/css/bootstrap.min.css",
+            "../../site/css/style.css",
+            "../../site/css/pali_style.css",
+            "../../site/web-fonts-with-css/css/fontawesome-all.min.css"
         ]
     },
     "sound_file": "change_screen.ogg",
     "total_questions": 8,
-    "button_images": {
-        "next_button": "next_button.png",
-        "info_button": "info_button.png",
-        "start_button": "start_button.png"
-    },
     "css_files": [
-        "site_resources/bootstrap.min.css",
-        "site_resources/style.css"
+        "site/css/bootstrap.min.css",
+        "site/css/style.css",
+        "site/css/pali_style.css"
     ],
     "js_files": [
-        "site_resources/bootstrap.min.js"
+        "site/js/bootstrap.min.js"
+    ],
+    "web_fonts": [
+        "site/web-fonts-with-css"
     ]
 }

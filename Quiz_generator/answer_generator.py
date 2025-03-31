@@ -48,44 +48,44 @@ class AnswerPageGenerator(BasePageGenerator):
 
         <script>
                 var session = new QiSession();
-                var audio = new Audio('../change_screen.ogg');
+                var audio = new Audio('../../change_screen.ogg');
 
                 document.getElementById("question").innerHTML = getUrlVars()["question"];
 
-                function getUrlVars() {
-                        var vars = {};
-                        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                function getUrlVars() {{
+                        var vars = {{}};
+                        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {{
                                 vars[key] = value;
-                        });
+                        }});
 
                         return vars;
-                }
+                }}
 
-                function yes_clicked(){
+                function yes_clicked(){{
                         audio.play();
-                        session.service('ALMemory').done(function(ALMemory) {
+                        session.service('ALMemory').done(function(ALMemory) {{
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("orientation/answerContinue", 0);
-                        });
-                }
+                        }});
+                }}
 
-                function exit(){
+                function exit(){{
                         audio.play();
-                        session.service('ALMemory').done(function(ALMemory) {
+                        session.service('ALMemory').done(function(ALMemory) {{
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("Orientation/Exit", 0);
-                        });
-                }
+                        }});
+                }}
 
-                function more_clicked(){
+                function more_clicked(){{
                         audio.play();
                         document.getElementById("more_button").style.display = 'none';
                         document.getElementById("qtitle").innerHTML = '<h2>{title}</h2><h3>{subtitle}</h3>'
-                        session.service('ALMemory').done(function(ALMemory) {
+                        session.service('ALMemory').done(function(ALMemory) {{
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("orientation/say_info", "{robot_speech}");
-                        });
-                }
+                        }});
+                }}
 
         </script>
 
@@ -96,6 +96,15 @@ class AnswerPageGenerator(BasePageGenerator):
         """Generate the answer page shown after user selects an answer"""
         output_file = self.output_dir / f"quiz{quiz_num}_ans.html"
         
+        # Update button image paths for consistency
+        next_button_image = quiz_data.get("next_button_image", "../../site/img/next_button.png")
+        if next_button_image.startswith("../images/"):
+            next_button_image = "../../site/img/" + next_button_image.replace("../images/", "")
+            
+        more_button_image = quiz_data.get("more_button_image", "../../site/img/info_button.png")
+        if more_button_image.startswith("../images/"):
+            more_button_image = "../../site/img/" + more_button_image.replace("../images/", "")
+        
         # Create template data
         template_data = {
             "quiz_num": quiz_num,
@@ -104,8 +113,8 @@ class AnswerPageGenerator(BasePageGenerator):
             "title": quiz_data["title"],
             "subtitle": quiz_data.get("subtitle", ""),
             "robot_speech": quiz_data["robot_speech"],
-            "next_button_image": quiz_data.get("next_button_image", "../images/next_button.png"),
-            "more_button_image": quiz_data.get("more_button_image", "../images/info_button.png")
+            "next_button_image": next_button_image,
+            "more_button_image": more_button_image
         }
         
         # Get HTML header and apply template

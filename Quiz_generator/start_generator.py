@@ -45,31 +45,31 @@ class StartPageGenerator(BasePageGenerator):
         </div>
         <script>
         var session = new QiSession();
-        var audio = new Audio('../change_screen.ogg');
+        var audio = new Audio('../../change_screen.ogg');
 
-        function yes_clicked(){
+        function yes_clicked(){{
                 audio.play();
-                session.service('ALMemory').done(function(ALMemory) {
+                session.service('ALMemory').done(function(ALMemory) {{
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("orientation/answerContinue", 0);
-                });
-        }
+                }});
+        }}
 
-        function no_clicked(){
+        function no_clicked(){{
                 audio.play();
-                session.service('ALMemory').done(function(ALMemory) {
+                session.service('ALMemory').done(function(ALMemory) {{
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("orientation/answerStop", 1);
-                });
-        }
+                }});
+        }}
 
-        function exit(){
+        function exit(){{
                 audio.play();
-                session.service('ALMemory').done(function(ALMemory) {
+                session.service('ALMemory').done(function(ALMemory) {{
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("Orientation/Exit", 1);
-                });
-        }
+                }});
+        }}
 
         </script>
 </body>

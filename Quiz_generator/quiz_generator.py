@@ -88,15 +88,15 @@ class PepperQuizGenerator:
         
         # Copy image files if they exist and are configured
         if self.image_dir.exists():
-            # Create images directory in output dir
-            images_dir = self.output_dir / "images"
-            images_dir.mkdir(exist_ok=True)
+            # Create images directory in site/img directory
+            images_dir = self.output_dir / "site" / "img"
+            images_dir.mkdir(parents=True, exist_ok=True)
             
-            # Copy all images from image_dir to output/images
+            # Copy all images from image_dir to output/site/img
             for img_file in self.image_dir.glob("*.*"):
                 if img_file.is_file() and img_file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.svg']:
                     shutil.copy(img_file, images_dir / img_file.name)
-                    print(f"Copied image: {img_file.name}")
+                    print(f"Copied image: {img_file.name} to site/img/")
         
         # Copy CSS and JS files if specified in config
         if "css_files" in self.config:
