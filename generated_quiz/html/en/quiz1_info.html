@@ -78,7 +78,7 @@
 
                 var audio = new Audio('../../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"];
-                        document.getElementById("qtitle").innerHTML = "<h2>Rauhaniemi beach</h2><h3>One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans.</h3>"
+                        document.getElementById("qtitle").innerHTML = "<h2>paro!</h2><h3>One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans.</h3>"
                 session.service('ALMemory').done(function(ALMemory) {
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("orientation/say_info", "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans. However, I dare not to go there, because I would melt!");

@@ -54,7 +54,7 @@
                                         <h2 class="quiz-progress"><span id="question"></span>/8</h2>
                                 </div>
                                 <div class="col-xs-8">
-                                        <h2 id="qtitle" class="quiz-title">Rauhaniemi beach</h2>
+                                        <h2 id="qtitle" class="quiz-title">paro!</h2>
                                 </div>
                                 <nav class="col-xs-2">
                                         <a onmouseup="exit()" class="float-right"><i class="text-shadow fas fa-times-circle fa-3x"></i></a>
@@ -110,7 +110,7 @@
                 function more_clicked(){
                         audio.play();
                         document.getElementById("more_button").style.display = 'none';
-                        document.getElementById("qtitle").innerHTML = '<h2>Rauhaniemi beach</h2><h3>You can walk to Rauhaniemi beach in 30 minutes or take bus number 2 to get there.</h3>'
+                        document.getElementById("qtitle").innerHTML = '<h2>paro!</h2><h3>You can walk to Rauhaniemi beach in 30 minutes or take bus number 2 to get there.</h3>'
                         session.service('ALMemory').done(function(ALMemory) {
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("orientation/say_info", "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans. However, I dare not to go there, because I would melt!");
