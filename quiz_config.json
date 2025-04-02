@@ -1,68 +1,136 @@
 {
-    "quiz_pages": [
-        {
-            "question": "Which robot is a real robot?",
-            "options": [
-                "",
-                "",
-                ""
-            ],
-            "correct_answer": "paro",
-            "title": "paro!",
-            "subtitle": "You can walk to Rauhaniemi beach in 30 minutes or take bus number 2 to get there.",
-            "info_text": "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans.",
-            "robot_speech": "One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans. However, I dare not to go there, because I would melt!",
-            "next_button_image": "../images/next_button.png",
-            "more_button_image": "../images/info_button.png",
-            "option_images": [
-                "../images/paro.jpg",
-                "../images/johnny.jpg",
-                "../images/walle.jpg"
-            ],
-            "body_class": "bg-secondary quiz"
-        },
-        {
-            "question": "Which building?",
-            "options": [
-                "Kauppi observatory",
-                "Pyynikki observation tower",
-                "Hervanta water tower"
-            ],
-            "correct_answer": "Pyynikki observation tower",
-            "title": "Pyynikki observation tower",
-            "subtitle": "The Pyynikki observation tower offers a panoramic view of Tampere.",
-            "info_text": "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis!",
-            "robot_speech": "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis! They are delicious donuts that humans enjoy eating.",
-            "next_button_image": "../images/next_button.png",
-            "more_button_image": "../images/info_button.png",
-            "body_class": "bg-secondary quiz"
-        }
-    ],
-    "start_page": {
-        "body_class": "bg-primary",
-        "title": "Welcome to the Tampere Quiz!",
-        "subtitle": "I've been visiting different attractions and places in Tampere and I took lots of pictures from my journey. Would you like to guess the places I visited?",
-        "credits": "Pictures: Visit Tampere / Laura Vanzo, Olli-Pekka Latvala ja Kladez Zolota. Editing: Santeri Holappa.",
-        "yes_button_text": "Yes",
-        "no_button_text": "No",
-        "stylesheets": [
-            "../site/css/bootstrap.min.css",
-            "../site/css/style.css",
-            "../site/web-fonts-with-css/css/fontawesome-all.min.css"
-        ]
+  "quiz_pages": [
+    {
+      "question": "Which one is NOT a robot?",
+      "options": [
+        "furhat",
+        "toys",
+        "furhat"
+      ],
+      "correct_answer": "furhat",
+      "title": "Not a Robot?",
+      "subtitle": "Identify the option that does not represent a true robot.",
+      "info_text": "Remember, sometimes things are not what they seem!",
+      "robot_speech": "Beep boop! Which one is not like the rest?",
+      "next_button_image": "../images/next_button.png",
+      "more_button_image": "../images/info_button.png",
+      "option_images": [
+        "../images/robot1.png",
+        "../images/robot2.png",
+        "../images/robot3.png"
+      ],
+      "body_class": "bg-secondary quiz"
     },
-    "sound_file": "change_screen.ogg",
-    "total_questions": 8,
-    "button_images": {
-        "next_button": "next_button.png",
-        "info_button": "info_button.png",
-        "start_button": "start_button.png"
+    {
+      "question": "Which one of these is NOT a humanoid robot?",
+      "options": [
+        "vaccuum",
+        "c3po",
+        "tesla robot"
+      ],
+      "correct_answer": "vaccuum",
+      "title": "Non-Humanoid?",
+      "subtitle": "Choose the option that does not fit the humanoid design criteria.",
+      "info_text": "Consider the design and functionality of each option.",
+      "robot_speech": "Analyzing human-like features... which option doesn't match?",
+      "next_button_image": "../images/next_button.png",
+      "more_button_image": "../images/info_button.png",
+      "option_images": [
+        "../images/robot1.png",
+        "../images/robot2.png",
+        "../images/robot3.png"
+      ],
+      "body_class": "bg-secondary quiz"
     },
-    "css_files": [
-        "site_resources/bootstrap.min.css",
-        "site_resources/style.css"
-    ],
-    "js_files": [
-        "site_resources/bootstrap.min.js"
+    {
+      "question": "Which one is NOT a social robot?",
+      "options": [
+        "singing cactus",
+        "aibo",
+        "factory bot"
+      ],
+      "correct_answer": "singing cactus",
+      "title": "Not Social?",
+      "subtitle": "Pick the option that is not considered a social robot.",
+      "info_text": "Social robots are designed to interact with humans. Which one falls short?",
+      "robot_speech": "I may be a robot, but I know social cues. Choose wisely!",
+      "next_button_image": "../images/next_button.png",
+      "more_button_image": "../images/info_button.png",
+      "option_images": [
+        "../images/robot1.png",
+        "../images/robot2.png",
+        "../images/robot3.png"
+      ],
+      "body_class": "bg-secondary quiz"
+    },
+    {
+      "question": "Which robot is NOT used in education?",
+      "options": [
+        "sale robotti",
+        "pepper",
+        "mentor bot"
+      ],
+      "correct_answer": "sale robotti",
+      "title": "Not Educational?",
+      "subtitle": "Select the robot that isn't typically utilized in educational environments.",
+      "info_text": "Education relies on interactive tools. Which one doesn't contribute?",
+      "robot_speech": "I wish I could learn, but this one didn't get the memo.",
+      "next_button_image": "../images/next_button.png",
+      "more_button_image": "../images/info_button.png",
+      "option_images": [
+        "../images/robot1.png",
+        "../images/robot2.png",
+        "../images/robot3.png"
+      ],
+      "body_class": "bg-secondary quiz"
+    },
+    {
+      "question": "Which robot is NOT used in elder care?",
+      "options": [
+        "tesla robot",
+        "paro",
+        "companion robot"
+      ],
+      "correct_answer": "tesla robot",
+      "title": "Not for Elder Care?",
+      "subtitle": "Determine which robot is not commonly deployed in elder care services.",
+      "info_text": "Elder care robots offer companionship—find the one that is out of place.",
+      "robot_speech": "Caring for elders is an art. Which one missed the lesson?",
+      "next_button_image": "../images/next_button.png",
+      "more_button_image": "../images/info_button.png",
+      "option_images": [
+        "../images/robot1.png",
+        "../images/robot2.png",
+        "../images/robot3.png"
+      ],
+      "body_class": "bg-secondary quiz"
+    }
+  ],
+  "start_page": {
+    "body_class": "bg-primary",
+    "title": "Welcome to the Robot Quiz!",
+    "subtitle": "Test your knowledge about robots and their applications with this fun quiz.",
+    "credits": "Quiz content by Your Name.",
+    "yes_button_text": "Start Quiz",
+    "no_button_text": "Exit",
+    "stylesheets": [
+      "../site/css/bootstrap.min.css",
+      "../site/css/style.css",
+      "../site/web-fonts-with-css/css/fontawesome-all.min.css"
     ]
+  },
+  "sound_file": "change_screen.ogg",
+  "total_questions": 5,
+  "button_images": {
+    "next_button": "../images/next_button.png",
+    "info_button": "../images/info_button.png",
+    "start_button": "../images/start_button.png"
+  },
+  "css_files": [
+    "site_resources/bootstrap.min.css",
+    "site_resources/style.css"
+  ],
+  "js_files": [
+    "site_resources/bootstrap.min.js"
+  ]
 }
