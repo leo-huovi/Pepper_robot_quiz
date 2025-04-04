@@ -32,8 +32,13 @@ class AnswerPageGenerator(BasePageGenerator):
                         </div>
                 </div>
         </header>
+                <div class="container">
+                        <!-- Display correct answer image if provided -->
+                        <div class="row" id="answer_image_container" style="text-align: center; margin: 20px 0;">
+                                {answer_image_html}
+                        </div>
+                </div>
                 <div class="container" style="width:80%;position:fixed;bottom:10px;margin-left:10%">
-
                         <div class="row">
                                 <div id="after_question" class="col-sm-12 flex-parent buttonarea wrap" style="display:block">
                                         <button type="submit" onmouseup="yes_clicked()" class="img-button">
@@ -105,6 +110,47 @@ class AnswerPageGenerator(BasePageGenerator):
         if more_button_image.startswith("../images/"):
             more_button_image = "../../site/img/" + more_button_image.replace("../images/", "")
         
+        # Generate answer image HTML if available
+        answer_image_html = ""
+        if "correct_answer_image" in quiz_data and quiz_data["correct_answer_image"]:
+            # Get the correct answer image path
+            image_path = quiz_data["correct_answer_image"]
+            # Make sure path is relative to site structure
+            if not image_path.startswith("../../site/img/"):
+                # If the path uses "../images/" format, update it
+                if image_path.startswith("../images/"):
+                    image_path = "../../site/img/" + image_path.replace("../images/", "")
+            
+            # Generate the HTML for the image
+            answer_image_html = f"""
+                <div class="answer-image">
+                    <img src="{image_path}" alt="{quiz_data['correct_answer']}" style="max-width: 80%; height: auto;">
+                    <h3>{quiz_data['correct_answer']}</h3>
+                </div>
+            """
+        # Alternatively, find the correct answer image from option_images if available
+        elif "option_images" in quiz_data and "options" in quiz_data and "correct_answer" in quiz_data:
+            try:
+                correct_idx = quiz_data["options"].index(quiz_data["correct_answer"])
+                if correct_idx < len(quiz_data["option_images"]):
+                    image_path = quiz_data["option_images"][correct_idx]
+                    # Make sure path is relative to site structure
+                    if not image_path.startswith("../../site/img/"):
+                        # If the path uses "../images/" format, update it
+                        if image_path.startswith("../images/"):
+                            image_path = "../../site/img/" + image_path.replace("../images/", "")
+                    
+                    # Generate the HTML for the image
+                    answer_image_html = f"""
+                        <div class="answer-image">
+                            <img src="{image_path}" alt="{quiz_data['correct_answer']}" style="max-width: 80%; height: auto;">
+                            <h3>{quiz_data['correct_answer']}</h3>
+                        </div>
+                    """
+            except ValueError:
+                # Correct answer not found in options, use empty string
+                pass
+        
         # Create template data
         template_data = {
             "quiz_num": quiz_num,
@@ -114,7 +160,8 @@ class AnswerPageGenerator(BasePageGenerator):
             "subtitle": quiz_data.get("subtitle", ""),
             "robot_speech": quiz_data["robot_speech"],
             "next_button_image": next_button_image,
-            "more_button_image": more_button_image
+            "more_button_image": more_button_image,
+            "answer_image_html": answer_image_html
         }
         
         # Get HTML header and apply template

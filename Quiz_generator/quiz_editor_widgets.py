@@ -237,6 +237,28 @@ class QuizEditorApp(QMainWindow):
         option_images_group.setLayout(option_images_layout)
         form_layout.addRow(option_images_group)
         
+        # Correct answer image (for answer and info pages)
+        correct_answer_image_group = QGroupBox("Correct Answer Image (for Result/Info Pages)")
+        correct_answer_image_layout = QVBoxLayout()
+        
+        correct_answer_image_field_layout = QHBoxLayout()
+        self.correct_answer_image_path = QLineEdit()
+        self.correct_answer_image_path.setReadOnly(True)
+        self.browse_correct_answer_image_btn = QPushButton("Browse")
+        self.browse_correct_answer_image_btn.clicked.connect(self.browse_correct_answer_image)
+        
+        correct_answer_image_field_layout.addWidget(self.correct_answer_image_path)
+        correct_answer_image_field_layout.addWidget(self.browse_correct_answer_image_btn)
+        
+        self.use_correct_option_image_btn = QPushButton("Use Selected Correct Option's Image")
+        self.use_correct_option_image_btn.clicked.connect(self.use_selected_correct_option_image)
+        
+        correct_answer_image_layout.addLayout(correct_answer_image_field_layout)
+        correct_answer_image_layout.addWidget(self.use_correct_option_image_btn)
+        
+        correct_answer_image_group.setLayout(correct_answer_image_layout)
+        form_layout.addRow(correct_answer_image_group)
+        
         # Info text
         self.info_text = QTextEdit()
         form_layout.addRow(QLabel("Info Text:"), self.info_text)
@@ -459,6 +481,7 @@ class QuizEditorApp(QMainWindow):
         apply_question_changes, cancel_question_changes, clear_question_form,
         add_option, edit_option, remove_option,
         add_option_image, remove_option_image,
+        browse_correct_answer_image, use_selected_correct_option_image,
         add_css_file, remove_css_file,
         add_js_file, remove_js_file,
         browse_image, browse_sound_file_path,

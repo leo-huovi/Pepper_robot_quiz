@@ -30,7 +30,8 @@ def add_question(self):
         "robot_speech": "What the robot will say about this answer.",
         "body_class": "bg-secondary quiz",
         "next_button_image": "../images/next_button.png",
-        "more_button_image": "../images/info_button.png"
+        "more_button_image": "../images/info_button.png",
+        "correct_answer_image": ""  # New field for correct answer image
     }
     
     self.quiz_config["quiz_pages"].append(new_question)
@@ -123,6 +124,9 @@ def question_selected(self, row):
         for img in question_data.get("option_images", []):
             self.option_images_list.addItem(img)
         
+        # Correct answer image
+        self.correct_answer_image_path.setText(question_data.get("correct_answer_image", ""))
+        
         # Info text and robot speech
         self.info_text.setText(question_data.get("info_text", ""))
         self.robot_speech.setText(question_data.get("robot_speech", ""))
@@ -170,6 +174,9 @@ def apply_question_changes(self):
     elif "option_images" in question_data:
         del question_data["option_images"]
     
+    # Correct answer image
+    question_data["correct_answer_image"] = self.correct_answer_image_path.text()
+    
     # Info text and robot speech
     question_data["info_text"] = self.info_text.toPlainText()
     question_data["robot_speech"] = self.robot_speech.toPlainText()
@@ -202,6 +209,7 @@ def clear_question_form(self):
     self.options_list.clear()
     self.correct_answer_combo.clear()
     self.option_images_list.clear()
+    self.correct_answer_image_path.setText("")
     self.info_text.setText("")
     self.robot_speech.setText("")
     self.bg_color_label.setText("bg-secondary quiz")
@@ -265,6 +273,32 @@ def remove_option_image(self):
                                      QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
             self.option_images_list.takeItem(current_row)
+
+def browse_correct_answer_image(self):
+    """Browse for correct answer image"""
+    file_path, _ = QFileDialog.getOpenFileName(self, "Select Image", "", "Image Files (*.png *.jpg *.jpeg *.gif *.bmp)")
+    if file_path:
+        # Convert to relative path if possible
+        relative_path = file_path
+        if self.image_dir_path:
+            try:
+                image_dir = Path(self.image_dir_path)
+                file = Path(file_path)
+                if image_dir in file.parents:
+                    relative_path = f"../images/{file.name}"
+            except:
+                pass
+        self.correct_answer_image_path.setText(relative_path)
+
+def use_selected_correct_option_image(self):
+    """Use the image from the correct option for the answer/info pages"""
+    correct_index = self.correct_answer_combo.currentIndex()
+    if correct_index >= 0 and correct_index < self.option_images_list.count():
+        image_path = self.option_images_list.item(correct_index).text()
+        self.correct_answer_image_path.setText(image_path)
+        self.status_bar.showMessage(f"Using image from option: {self.correct_answer_combo.currentText()}", 3000)
+    else:
+        self.status_bar.showMessage("No matching image for the correct option", 3000)
 
 # General Settings Methods
 def add_css_file(self):
