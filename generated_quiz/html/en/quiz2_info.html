@@ -24,11 +24,11 @@
                 <link rel="icon" type="image/png" sizes="16x16" href="<?= SITEPATH ?>img/ico/favicon-16x16.png">
                 <link rel="manifest" href="<?= SITEPATH ?>img/ico/manifest.json">
 
-        <link href="../../site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../site/css/style.css" rel="stylesheet" type="text/css">
-<link href="../../site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="../site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../site/css/style.css" rel="stylesheet" type="text/css">
+<link href="../site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
 
-                <script src="../../site/js/bootstrap.min.js"></script>
+                <script src="../site/js/bootstrap.min.js"></script>
                 <style>
                     .img-button {
                         background: none;
@@ -51,10 +51,10 @@
                 <div class="container-fluid">
                         <div class="row">
                                 <div class="col-xs-2">
-                                        <h2 class="quiz-progress"><span id="question"></span>/8</h2>
+                                        <h2 class="quiz-progress"><span id="question"></span>/5</h2>
                                 </div>
                                 <div class="col-xs-8">
-                                        <h2 id="qtitle" class="quiz-title"></h2>
+                                        <h2 id="qtitle" class="quiz-title">Non-Humanoid?</h2>
                                 </div>
                                 <nav class="col-xs-2">
                                         <a onmouseup="exit()" class="float-right"><i class="text-shadow fas fa-times-circle fa-3x"></i></a>
@@ -62,12 +62,31 @@
                         </div>
                 </div>
         </header>
-                <div class="container" style="width:80%;position:fixed;bottom:10px;margin-left:10%">
-
+                <div class="container">
+                        <!-- Display content in a two-column layout -->
+                        <div class="row" style="margin: 20px 0; display: flex; align-items: center;">
+                                <!-- Left column: Image -->
+                                <div class="col-xs-6" style="text-align: center;">
+                                        
+                <div class="correct-answer-image">
+                    <img src="../site/img/robot6.png" alt="Correct answer" style="max-width: 100%; max-height: 40vh; width: auto; height: auto;">
+                    <h3 style="visibility: hidden;" data-correct-option="vaccuum">vaccuum</h3>
+                </div>
+            
+                                </div>
+                                <!-- Right column: Text -->
+                                <div class="col-xs-6" style="text-align: left;">
+                                        <div class="info-text">
+                                            <h3>Vacuum robots like Roomba are designed for a specific function and have a practical, non-humanoid form that prioritizes their cleaning ability. Unlike C-3PO from Star Wars or the Tesla robot (Optimus), they don't attempt to mimic human body structure or proportions, which is the defining characteristic of humanoid robots.</h3>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="container" style="width:80%;position:fixed;bottom:20px;margin-left:10%">
                         <div class="row">
                                 <div id="after_question" class="col-sm-12 flex-parent buttonarea wrap" style="display:block">
                                         <button type="submit" onmouseup="yes_clicked()" class="img-button">
-                                            <img src="../../site/img/next_button.png" alt="Next question">
+                                            <img src="../site/img/next_button.png" alt="Next question">
                                         </button>
                                 </div>
                         </div>
@@ -76,12 +95,12 @@
         <script>
                 var session = new QiSession();
 
-                var audio = new Audio('../../change_screen.ogg');
+                var audio = new Audio('../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"];
-                        document.getElementById("qtitle").innerHTML = "<h2>Pyynikki observation tower</h2><h3>Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis!</h3>"
+                
                 session.service('ALMemory').done(function(ALMemory) {
                         ALMemory.raiseEvent("orientation/silence", 1);
-                        ALMemory.raiseEvent("orientation/say_info", "Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis! They are delicious donuts that humans enjoy eating.");
+                        ALMemory.raiseEvent("orientation/say_info", "Analyzing human-like features... which option doesn't match?");
                 });
 
                 function getUrlVars() {

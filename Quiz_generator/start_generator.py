@@ -45,7 +45,7 @@ class StartPageGenerator(BasePageGenerator):
         </div>
         <script>
         var session = new QiSession();
-        var audio = new Audio('../../change_screen.ogg');
+        var audio = new Audio('../change_screen.ogg');
 
         function yes_clicked(){{
                 audio.play();

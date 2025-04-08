@@ -28,7 +28,7 @@
 <link href="../site/css/style.css" rel="stylesheet" type="text/css">
 <link href="../site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
 
-                <script src="../../site/js/bootstrap.min.js"></script>
+                <script src="../site/js/bootstrap.min.js"></script>
                 <style>
                     .img-button {
                         background: none;
@@ -60,22 +60,22 @@
                 <div class="container">
                         <div class="row">
                                 <div class="col-sm-12">
-                                        <h1>Welcome to the Tampere Quiz!</h1>
-                                        <h3>I've been visiting different attractions and places in Tampere and I took lots of pictures from my journey. Would you like to guess the places I visited?</h3>
-                                        <h4>Pictures: Visit Tampere / Laura Vanzo, Olli-Pekka Latvala ja Kladez Zolota. Editing: Santeri Holappa.</h4>
+                                        <h1>Welcome to the Robot Quiz!</h1>
+                                        <h3>Test your knowledge about robots and their applications with this fun quiz.</h3>
+                                        <h4>Quiz content by Your Name.</h4>
                                 </div>
                         </div>
 
                         <div class="row">
                                 <div class="col-sm-12 flex-parent buttonarea">
-                                        <a onclick="yes_clicked()" class="button">Yes</a>
-                                        <a onclick="no_clicked()" class="button">No</a>
+                                        <a onclick="yes_clicked()" class="button">Start Quiz</a>
+                                        <a onclick="no_clicked()" class="button">Exit</a>
                                 </div>
                         </div>
         </div>
         <script>
         var session = new QiSession();
-        var audio = new Audio('../../change_screen.ogg');
+        var audio = new Audio('../change_screen.ogg');
 
         function yes_clicked(){
                 audio.play();

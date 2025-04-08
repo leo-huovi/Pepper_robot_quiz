@@ -52,7 +52,7 @@ class QuestionPageGenerator(BasePageGenerator):
         <script>
                 var session = new QiSession();
 
-                var audio = new Audio('../../change_screen.ogg');
+                var audio = new Audio('../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"]
                 function getUrlVars() {{
                         var vars = {{}};
@@ -125,28 +125,31 @@ class QuestionPageGenerator(BasePageGenerator):
             if "option_images" in quiz_data and i < len(quiz_data["option_images"]):
                 img_path = quiz_data["option_images"][i]
                 # Make sure path is relative to site structure
-                if not img_path.startswith("../../site/img/"):
+                if not img_path.startswith("../site/img/"):
                     # If the path uses "../images/" format, update it
                     if img_path.startswith("../images/"):
-                        img_path = "../../site/img/" + img_path.replace("../images/", "")
+                        img_path = "../site/img/" + img_path.replace("../images/", "")
                 
+                # Use option text as hidden data attribute for correct answer logic, but don't display it
                 option_buttons += f"""
-                                        <button type="submit" class="{button_class}" onmouseup="{button_action}">
-                                            <img src="{img_path}" alt="{option}">
-                                            <span class="button-text">{option}</span>
+                                        <button type="submit" class="{button_class}" onmouseup="{button_action}" data-option="{option}">
+                                            <img src="{img_path}" alt="Quiz option">
                                         </button>"""
             else:
+                # If no image, we still need a button but can hide the text visually
                 option_buttons += f"""
-                                        <button type="submit" class="{button_class}" onmouseup="{button_action}">{option}</button>"""
+                                        <button type="submit" class="{button_class}" onmouseup="{button_action}" data-option="{option}">
+                                            <span style="visibility: hidden;">{option}</span>
+                                        </button>"""
         
         # Update button image paths for consistency
-        next_button_image = quiz_data.get("next_button_image", "../../site/img/next_button.png")
+        next_button_image = quiz_data.get("next_button_image", "../site/img/next_button.png")
         if next_button_image.startswith("../images/"):
-            next_button_image = "../../site/img/" + next_button_image.replace("../images/", "")
+            next_button_image = "../site/img/" + next_button_image.replace("../images/", "")
             
-        more_button_image = quiz_data.get("more_button_image", "../../site/img/info_button.png")
+        more_button_image = quiz_data.get("more_button_image", "../site/img/info_button.png")
         if more_button_image.startswith("../images/"):
-            more_button_image = "../../site/img/" + more_button_image.replace("../images/", "")
+            more_button_image = "../site/img/" + more_button_image.replace("../images/", "")
         
         # Create template data
         template_data = {

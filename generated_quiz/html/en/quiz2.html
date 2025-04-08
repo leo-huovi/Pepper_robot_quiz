@@ -24,11 +24,11 @@
                 <link rel="icon" type="image/png" sizes="16x16" href="<?= SITEPATH ?>img/ico/favicon-16x16.png">
                 <link rel="manifest" href="<?= SITEPATH ?>img/ico/manifest.json">
 
-        <link href="../../site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<link href="../../site/css/style.css" rel="stylesheet" type="text/css">
-<link href="../../site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+        <link href="../site/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../site/css/style.css" rel="stylesheet" type="text/css">
+<link href="../site/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
 
-                <script src="../../site/js/bootstrap.min.js"></script>
+                <script src="../site/js/bootstrap.min.js"></script>
                 <style>
                     .img-button {
                         background: none;
@@ -51,10 +51,10 @@
                 <div class="container-fluid">
                         <div class="row">
                                 <div class="col-xs-2">
-                                        <h2 class="quiz-progress"><span id="question"></span>/8</h2>
+                                        <h2 class="quiz-progress"><span id="question"></span>/5</h2>
                                 </div>
                                 <div class="col-xs-8">
-                                        <h2 id="qtitle" class="quiz-title">Which building?</h2>
+                                        <h2 id="qtitle" class="quiz-title">Which one of these is NOT a humanoid robot?</h2>
                                 </div>
                                 <nav class="col-xs-2">
                                         <a onmouseup="exit()" class="float-right"><i class="text-shadow fas fa-times-circle fa-3x"></i></a>
@@ -66,16 +66,22 @@
                         <div class="row">
                                 <div id="ans_buttons" class="col-sm-12 flex-parent buttonarea wrap">
 
-                                        <button type="submit" class="wrong-answer" onmouseup="wrong_clicked()">Kauppi observatory</button>
-                                        <button type="submit" class="right-answer" onmouseup="right_clicked()">Pyynikki observation tower</button>
-                                        <button type="submit" class="wrong-answer" onmouseup="wrong_clicked()">Hervanta water tower</button>
+                                        <button type="submit" class="wrong-answer" onmouseup="wrong_clicked()" data-option="c3po">
+                                            <img src="../site/img/robot5.png" alt="Quiz option">
+                                        </button>
+                                        <button type="submit" class="wrong-answer" onmouseup="wrong_clicked()" data-option="tesla_robot">
+                                            <img src="../site/img/robot4.png" alt="Quiz option">
+                                        </button>
+                                        <button type="submit" class="right-answer" onmouseup="right_clicked()" data-option="vaccuum">
+                                            <img src="../site/img/robot6.png" alt="Quiz option">
+                                        </button>
                                 </div>
                                 <div id="after_question" class="col-sm-12 flex-parent buttonarea wrap" style="display:none">
                                         <button type="submit" onmouseup="yes_clicked()" class="img-button">
-                                            <img src="../../site/img/next_button.png" alt="Next question">
+                                            <img src="../site/img/next_button.png" alt="Next question">
                                         </button>
                                         <button type="submit" id="more_button" onmouseup="more_clicked()" class="img-button">
-                                            <img src="../../site/img/info_button.png" alt="More info">
+                                            <img src="../site/img/info_button.png" alt="More info">
                                         </button>
                                 </div>
                         </div>
@@ -84,7 +90,7 @@
         <script>
                 var session = new QiSession();
 
-                var audio = new Audio('../../change_screen.ogg');
+                var audio = new Audio('../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"]
                 function getUrlVars() {
                         var vars = {};
@@ -111,7 +117,7 @@
                 }
                 function loadAfterTime(){
                         document.getElementById("ans_buttons").style.display = 'none';
-                        document.getElementById("qtitle").innerHTML = "<h2>Pyynikki observation tower</h2>";
+                        document.getElementById("qtitle").innerHTML = "<h2>Non-Humanoid?</h2>";
                         document.getElementById("after_question").style.display = 'block';
                         document.getElementById("continue_text").style.display = 'block';
                 }
@@ -132,7 +138,7 @@
                 function more_clicked(){
                         audio.play();
                         document.getElementById("more_button").style.display = 'none';
-                        document.getElementById("qtitle").innerHTML = '<h2>Pyynikki observation tower</h2><h3>The Pyynikki observation tower offers a panoramic view of Tampere.</h3>'
+                        document.getElementById("qtitle").innerHTML = '<h2>Non-Humanoid?</h2><h3>Choose the option that does not fit the humanoid design criteria.</h3>'
                         session.service('ALMemory').done(function(ALMemory) {
                                 ALMemory.raiseEvent("orientation/silence", 1);
                                 ALMemory.raiseEvent("orientation/info", 0);

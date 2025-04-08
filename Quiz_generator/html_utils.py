@@ -9,9 +9,9 @@ def get_html_header(quiz_num, title, stylesheets=None):
     
     if stylesheets is None:
         stylesheets = [
-            "../../site/css/bootstrap.min.css",
-            "../../site/css/style.css",
-            "../../site/web-fonts-with-css/css/fontawesome-all.min.css"
+            "../site/css/bootstrap.min.css",
+            "../site/css/style.css",
+            "../site/web-fonts-with-css/css/fontawesome-all.min.css"
         ]
     
     stylesheets_html = ""
@@ -45,7 +45,7 @@ def get_html_header(quiz_num, title, stylesheets=None):
                 <link rel="manifest" href="<?= SITEPATH ?>img/ico/manifest.json">
 
         {stylesheets_html}
-                <script src="../../site/js/bootstrap.min.js"></script>
+                <script src="../site/js/bootstrap.min.js"></script>
                 <style>
                     .img-button {{
                         background: none;

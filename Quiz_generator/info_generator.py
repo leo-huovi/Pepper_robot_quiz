@@ -25,7 +25,7 @@ class InfoPageGenerator(BasePageGenerator):
                                         <h2 class="quiz-progress"><span id="question"></span>/{total_questions}</h2>
                                 </div>
                                 <div class="col-xs-8">
-                                        <h2 id="qtitle" class="quiz-title"></h2>
+                                        <h2 id="qtitle" class="quiz-title">{title}</h2>
                                 </div>
                                 <nav class="col-xs-2">
                                         <a onmouseup="exit()" class="float-right"><i class="text-shadow fas fa-times-circle fa-3x"></i></a>
@@ -34,13 +34,21 @@ class InfoPageGenerator(BasePageGenerator):
                 </div>
         </header>
                 <div class="container">
-                        <!-- Display correct answer image if provided -->
-                        <div class="row" id="answer_image_container" style="text-align: center; margin: 20px 0;">
-                                {answer_image_html}
+                        <!-- Display content in a two-column layout -->
+                        <div class="row" style="margin: 20px 0; display: flex; align-items: center;">
+                                <!-- Left column: Image -->
+                                <div class="col-xs-6" style="text-align: center;">
+                                        {correct_answer_html}
+                                </div>
+                                <!-- Right column: Text -->
+                                <div class="col-xs-6" style="text-align: left;">
+                                        <div class="info-text">
+                                            <h3>{info_text}</h3>
+                                        </div>
+                                </div>
                         </div>
                 </div>
-                <div class="container" style="width:80%;position:fixed;bottom:10px;margin-left:10%">
-
+                <div class="container" style="width:80%;position:fixed;bottom:20px;margin-left:10%">
                         <div class="row">
                                 <div id="after_question" class="col-sm-12 flex-parent buttonarea wrap" style="display:block">
                                         <button type="submit" onmouseup="yes_clicked()" class="img-button">
@@ -53,9 +61,9 @@ class InfoPageGenerator(BasePageGenerator):
         <script>
                 var session = new QiSession();
 
-                var audio = new Audio('../../change_screen.ogg');
+                var audio = new Audio('../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"];
-                        document.getElementById("qtitle").innerHTML = "<h2>{title}</h2><h3>{info_text}</h3>"
+                
                 session.service('ALMemory').done(function(ALMemory) {{
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("orientation/say_info", "{robot_speech}");
@@ -96,26 +104,26 @@ class InfoPageGenerator(BasePageGenerator):
         output_file = self.output_dir / f"quiz{quiz_num}_info.html"
         
         # Update button image path for consistency
-        next_button_image = quiz_data.get("next_button_image", "../../site/img/next_button.png")
+        next_button_image = quiz_data.get("next_button_image", "../site/img/next_button.png")
         if next_button_image.startswith("../images/"):
-            next_button_image = "../../site/img/" + next_button_image.replace("../images/", "")
+            next_button_image = "../site/img/" + next_button_image.replace("../images/", "")
         
-        # Generate answer image HTML if available
-        answer_image_html = ""
+        # Generate correct answer image HTML if available
+        correct_answer_html = ""
         if "correct_answer_image" in quiz_data and quiz_data["correct_answer_image"]:
             # Get the correct answer image path
             image_path = quiz_data["correct_answer_image"]
             # Make sure path is relative to site structure
-            if not image_path.startswith("../../site/img/"):
+            if not image_path.startswith("../site/img/"):
                 # If the path uses "../images/" format, update it
                 if image_path.startswith("../images/"):
-                    image_path = "../../site/img/" + image_path.replace("../images/", "")
+                    image_path = "../site/img/" + image_path.replace("../images/", "")
             
-            # Generate the HTML for the image
-            answer_image_html = f"""
-                <div class="answer-image">
-                    <img src="{image_path}" alt="{quiz_data['correct_answer']}" style="max-width: 80%; height: auto;">
-                    <h3>{quiz_data['correct_answer']}</h3>
+            # Generate the HTML for the image - hide the text with visibility:hidden
+            correct_answer_html = f"""
+                <div class="correct-answer-image">
+                    <img src="{image_path}" alt="Correct answer" style="max-width: 100%; max-height: 40vh; width: auto; height: auto;">
+                    <h3 style="visibility: hidden;" data-correct-option="{quiz_data['correct_answer']}">{quiz_data['correct_answer']}</h3>
                 </div>
             """
         # Alternatively, find the correct answer image from option_images if available
@@ -125,16 +133,16 @@ class InfoPageGenerator(BasePageGenerator):
                 if correct_idx < len(quiz_data["option_images"]):
                     image_path = quiz_data["option_images"][correct_idx]
                     # Make sure path is relative to site structure
-                    if not image_path.startswith("../../site/img/"):
+                    if not image_path.startswith("../site/img/"):
                         # If the path uses "../images/" format, update it
                         if image_path.startswith("../images/"):
-                            image_path = "../../site/img/" + image_path.replace("../images/", "")
+                            image_path = "../site/img/" + image_path.replace("../images/", "")
                     
-                    # Generate the HTML for the image
-                    answer_image_html = f"""
-                        <div class="answer-image">
-                            <img src="{image_path}" alt="{quiz_data['correct_answer']}" style="max-width: 80%; height: auto;">
-                            <h3>{quiz_data['correct_answer']}</h3>
+                    # Generate the HTML for the image - hide the text with visibility:hidden
+                    correct_answer_html = f"""
+                        <div class="correct-answer-image">
+                            <img src="{image_path}" alt="Correct answer" style="max-width: 100%; max-height: 35vh; width: auto; height: auto;">
+                            <h3 style="visibility: hidden;" data-correct-option="{quiz_data['correct_answer']}">{quiz_data['correct_answer']}</h3>
                         </div>
                     """
             except ValueError:
@@ -150,7 +158,7 @@ class InfoPageGenerator(BasePageGenerator):
             "info_text": quiz_data["info_text"],
             "robot_speech": quiz_data["robot_speech"],
             "next_button_image": next_button_image,
-            "answer_image_html": answer_image_html
+            "correct_answer_html": correct_answer_html
         }
         
         # Get HTML header and apply template

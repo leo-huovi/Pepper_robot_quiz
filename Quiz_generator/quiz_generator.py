@@ -32,12 +32,16 @@ class PepperQuizGenerator:
         # Create output directory if it doesn't exist
         self.output_dir.mkdir(parents=True, exist_ok=True)
         
-        # Create en directory for English pages
-        self.en_dir = self.output_dir / "html" / "en"
+        # Create html directory as parent for everything
+        self.html_dir = self.output_dir / "html"
+        self.html_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Create en directory for English pages inside html
+        self.en_dir = self.html_dir / "en"
         self.en_dir.mkdir(parents=True, exist_ok=True)
         
-        # Copy CSS and JS files if needed
-        self.site_dir = self.output_dir / "site"
+        # Create site directory inside html for CSS, JS, and images
+        self.site_dir = self.html_dir / "site"
         self.site_dir.mkdir(parents=True, exist_ok=True)
         
         # Initialize page generators
@@ -79,24 +83,24 @@ class PepperQuizGenerator:
     
     def _copy_common_assets(self):
         """Copy common assets like sound files, CSS, and JS"""
-        # Copy change_screen.ogg sound
+        # Copy change_screen.ogg sound to html directory
         if Path(self.config.get("sound_file", "change_screen.ogg")).exists():
             shutil.copy(
                 self.config.get("sound_file", "change_screen.ogg"), 
-                self.output_dir / "change_screen.ogg"
+                self.html_dir / "change_screen.ogg"
             )
         
         # Copy image files if they exist and are configured
         if self.image_dir.exists():
-            # Create images directory in site/img directory
-            images_dir = self.output_dir / "site" / "img"
+            # Create images directory in html/site/img directory
+            images_dir = self.site_dir / "img"
             images_dir.mkdir(parents=True, exist_ok=True)
             
-            # Copy all images from image_dir to output/site/img
+            # Copy all images from image_dir to html/site/img
             for img_file in self.image_dir.glob("*.*"):
                 if img_file.is_file() and img_file.suffix.lower() in ['.jpg', '.jpeg', '.png', '.gif', '.svg']:
                     shutil.copy(img_file, images_dir / img_file.name)
-                    print(f"Copied image: {img_file.name} to site/img/")
+                    print(f"Copied image: {img_file.name} to html/site/img/")
         
         # Copy CSS and JS files if specified in config
         if "css_files" in self.config:

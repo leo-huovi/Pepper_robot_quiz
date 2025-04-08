@@ -4,104 +4,109 @@
       "question": "Which one is NOT a robot?",
       "options": [
         "furhat",
-        "toys",
-        "furhat"
+        "fish",
+        "toy"
       ],
-      "correct_answer": "furhat",
+      "correct_answer": "fish",
+      "correct_answer_image": "../site/img/robot2.png",
       "title": "Not a Robot?",
       "subtitle": "Identify the option that does not represent a true robot.",
-      "info_text": "Remember, sometimes things are not what they seem!",
-      "robot_speech": "Beep boop! Which one is not like the rest?",
-      "next_button_image": "../images/next_button.png",
-      "more_button_image": "../images/info_button.png",
+      "info_text": "The famous singing fish toy, known as 'Big Mouth Billy Bass', is not a true robot but rather an animatronic novelty item popular in the early 2000s. It features pre-programmed movements and songs activated by a motion sensor. Unlike Furhat (a social robotics platform with advanced projection capabilities) and other robotic toys, singing fish toys lack autonomous decision-making abilities, sensors for environmental interaction, or adaptive learning capabilities that define true robots.",
+      "robot_speech": "Don't be fooled by the singing fish! It may move, but it's not really a robot like me.",
+      "next_button_image": "../site/img/next_button.png",
+      "more_button_image": "../site/img/info_button.png",
       "option_images": [
-        "../images/robot1.png",
-        "../images/robot2.png",
-        "../images/robot3.png"
+        "../site/img/robot3.png",
+        "../site/img/robot2.png",
+        "../site/img/robot1.png"
       ],
       "body_class": "bg-secondary quiz"
     },
     {
       "question": "Which one of these is NOT a humanoid robot?",
       "options": [
-        "vaccuum",
         "c3po",
-        "tesla robot"
+        "tesla_robot",
+        "vaccuum"
       ],
       "correct_answer": "vaccuum",
+      "correct_answer_image": "../site/img/robot6.png",
       "title": "Non-Humanoid?",
       "subtitle": "Choose the option that does not fit the humanoid design criteria.",
-      "info_text": "Consider the design and functionality of each option.",
+      "info_text": "Vacuum robots like Roomba are designed for a specific function and have a practical, non-humanoid form that prioritizes their cleaning ability. Unlike C-3PO from Star Wars or the Tesla robot (Optimus), they don't attempt to mimic human body structure or proportions, which is the defining characteristic of humanoid robots.",
       "robot_speech": "Analyzing human-like features... which option doesn't match?",
-      "next_button_image": "../images/next_button.png",
-      "more_button_image": "../images/info_button.png",
+      "next_button_image": "../site/img/next_button.png",
+      "more_button_image": "../site/img/info_button.png",
       "option_images": [
-        "../images/robot1.png",
-        "../images/robot2.png",
-        "../images/robot3.png"
+        "../site/img/robot5.png",
+        "../site/img/robot4.png",
+        "../site/img/robot6.png"
       ],
       "body_class": "bg-secondary quiz"
     },
     {
       "question": "Which one is NOT a social robot?",
       "options": [
-        "singing cactus",
-        "aibo",
-        "factory bot"
+        "factory_bot",
+        "singing_cactus",
+        "aibo"
       ],
-      "correct_answer": "singing cactus",
+      "correct_answer": "singing_cactus",
+      "correct_answer_image": "../site/img/robot7.png",
       "title": "Not Social?",
-      "subtitle": "Pick the option that is not considered a social robot.",
-      "info_text": "Social robots are designed to interact with humans. Which one falls short?",
+      "subtitle": "Identify which option lacks true social interaction capabilities.",
+      "info_text": "While the singing cactus toy can produce sounds and movements, it lacks the advanced interactive capabilities of true social robots. Social robots like Aibo (Sony's robot dog) and specialized factory companion robots are designed with sensors and AI to recognize, respond to, and engage meaningfully with humans, adapting their behavior based on social cues.",
       "robot_speech": "I may be a robot, but I know social cues. Choose wisely!",
-      "next_button_image": "../images/next_button.png",
-      "more_button_image": "../images/info_button.png",
+      "next_button_image": "../site/img/next_button.png",
+      "more_button_image": "../site/img/info_button.png",
       "option_images": [
-        "../images/robot1.png",
-        "../images/robot2.png",
-        "../images/robot3.png"
+        "../site/img/robot9.png",
+        "../site/img/robot7.png",
+        "../site/img/robot8.png"
       ],
       "body_class": "bg-secondary quiz"
     },
     {
       "question": "Which robot is NOT used in education?",
       "options": [
-        "sale robotti",
+        "sale_robotti",
         "pepper",
-        "mentor bot"
+        "mentor_bot"
       ],
-      "correct_answer": "sale robotti",
+      "correct_answer": "sale_robotti",
+      "correct_answer_image": "../site/img/robot10.png",
       "title": "Not Educational?",
       "subtitle": "Select the robot that isn't typically utilized in educational environments.",
-      "info_text": "Education relies on interactive tools. Which one doesn't contribute?",
+      "info_text": "The 'sale robotti' (convenience store delivery robot) is designed specifically for retail environments to transport items and assist customers with shopping. Unlike Pepper and educational mentor robots, it wasn't developed with curriculum integration features or to facilitate learning experiences. Educational robots typically include programming interfaces and interactive lessons.",
       "robot_speech": "I wish I could learn, but this one didn't get the memo.",
-      "next_button_image": "../images/next_button.png",
-      "more_button_image": "../images/info_button.png",
+      "next_button_image": "../site/img/next_button.png",
+      "more_button_image": "../site/img/info_button.png",
       "option_images": [
-        "../images/robot1.png",
-        "../images/robot2.png",
-        "../images/robot3.png"
+        "../site/img/robot10.png",
+        "../site/img/robot11.png",
+        "../site/img/robot12.png"
       ],
       "body_class": "bg-secondary quiz"
     },
     {
       "question": "Which robot is NOT used in elder care?",
       "options": [
-        "tesla robot",
+        "NASA_robot",
         "paro",
-        "companion robot"
+        "care_robot"
       ],
-      "correct_answer": "tesla robot",
+      "correct_answer": "NASA_robot",
+      "correct_answer_image": "../site/img/robot13.png",
       "title": "Not for Elder Care?",
       "subtitle": "Determine which robot is not commonly deployed in elder care services.",
-      "info_text": "Elder care robots offer companionship—find the one that is out of place.",
+      "info_text": "NASA's robotic systems are engineered for space exploration, performing tasks in extreme environments unsafe for humans. In contrast, robots like PARO (the therapeutic seal) and specialized care robots are designed specifically to provide companionship, monitor health vitals, assist with medication reminders, and support both elders and caregivers in daily living activities.",
       "robot_speech": "Caring for elders is an art. Which one missed the lesson?",
-      "next_button_image": "../images/next_button.png",
-      "more_button_image": "../images/info_button.png",
+      "next_button_image": "../site/img/next_button.png",
+      "more_button_image": "../site/img/info_button.png",
       "option_images": [
-        "../images/robot1.png",
-        "../images/robot2.png",
-        "../images/robot3.png"
+        "../site/img/robot13.png",
+        "../site/img/robot14.png",
+        "../site/img/robot15.png"
       ],
       "body_class": "bg-secondary quiz"
     }
@@ -122,9 +127,9 @@
   "sound_file": "change_screen.ogg",
   "total_questions": 5,
   "button_images": {
-    "next_button": "../images/next_button.png",
-    "info_button": "../images/info_button.png",
-    "start_button": "../images/start_button.png"
+    "next_button": "../site/img/next_button.png",
+    "info_button": "../site/img/info_button.png",
+    "start_button": "../site/img/start_button.png"
   },
   "css_files": [
     "site_resources/bootstrap.min.css",
