@@ -1,55 +1,35 @@
 topic: ~quiz_dlg()
 language: enu
 
-concept:(correct) \pau=500\ ^rand[^start(anioations/Stand/Emotions/Positive/Confident_1) ^start(animations/Stand/Emotions/Positive/Optimistic_1) ^start(animations/Stand/Gestures/Yes_3) ^start(animations/Stand/Gestures/Yes_2) ^start(animations/Stand/Gestures/Yes_1) ^start(animations/Stand/Gestures/Joy_1) ^start(animations/Stand/Gestures/Enthusiastic_1)] ^rand[exactly right correct "spot on" "you're right" super] \pau=1000\
+concept:(correct) \pau=500\ ^rand[^start(animations/Stand/Emotions/Positive/Confident_1) ^start(animations/Stand/Emotions/Positive/Optimistic_1) ^start(animations/Stand/Gestures/Yes_3) ^start(animations/Stand/Gestures/Yes_2) ^start(animations/Stand/Gestures/Yes_1) ^start(animations/Stand/Gestures/Joy_1) ^start(animations/Stand/Gestures/Enthusiastic_1)] ^rand[exactly right correct "spot on" "you're right" super] \pau=1000\
 concept:(wrong) \pau=500\ ^rand[^start(animations/Stand/Gestures/No_1) ^start(animations/Stand/BodyTalk/Thinking/ThinkingLoop_1) ^start(animations/Stand/Emotions/Negative/Anxious_1) ^start(animations/Stand/Waiting/HideHands_1) ^start(animations/Stand/Gestures/Reject_1) ^start(animations/Stand/Gestures/Desperate_3)] ^rand["not quite" "this was a hard one" "close" "let's see the right answer"] \pau=1000\
 concept:(affirmation) [yes yeah yup sure]
 concept:(answer_yes) ^rand[ok super yay "let's go"]
 concept:(denial) [no]
 
 concept:(start_quiz) OK Let's start. If you want to quit the quiz, just press the exit button on the top right corner of my tablet. Good luck!
-concept:(more) \pau=1000\ Would you like to continue \pau=200\ or ^rand["Do you want me to tell" "Would you like to hear"] more about this place?
+concept:(more) \pau=1000\ Would you like to continue \pau=200\ or ^rand["Do you want me to tell" "Would you like to hear"] more about this robot quiz?
 
 concept:(continue)[continue next "next question"]
 concept:(more-info)["tell me more" "more info" info]
 
-concept:(q1) Which museum?
-concept:(q2) Which building is found here?
-concept:(q3) Which place?
-concept:(q4) Which historical building?
-concept:(q5) Which lake?
-concept:(q6) Which building?
-concept:(q7) How tall is this building?
-concept:(q8) Which ride at the Särkänniemi amusement park?
-concept:(q9) Where is this Hugo Simberg's fresco found?
-concept:(q10) Which place?
-concept:(q11) Which summer destination in Pyhäjärvi?
-concept:(q12) Which new neighborhood?
-concept:(q13) Which bridge?
-concept:(q14) Which beach?
-concept:(q15) In which building is this museum today?
+concept:(q1) Which one is NOT a robot?
+concept:(q2) Which one of these is NOT a humanoid robot?
+concept:(q3) Which one is NOT a social robot?
+concept:(q4) Which robot is NOT used in education?
+concept:(q5) Which robot is NOT used in elder care?
 
-concept:(q1i) \pau=1000\ Would you also like to visit the Museum of Workers' Housing in Amuri? \pau=1000\
-concept:(q2i) \pau=1000\ Hatanpää mansion is surrounded by a beautiful park, arboretum, next to a lake. \pau=1000\
-concept:(q3i) \pau=1000\ The Market hall is on Hämeenkatu. There you can buy for example mustamakkara, black sausage! \pau=1000\
-concept:(q4i) \pau=1000\ In Näsilinna you can find Museum Milavida, café and a surrounding park. On the way there you can admire the beautiful enlayson area or stop by at Tallipiha. \pau=1000\
-concept:(q5i) \pau=1000\ You can admire the scenery of Pyhäjärvi from the hillsides of Pispala. From some places you can even see Näsijärvi on the other side of the Pispala ridge. \pau=1000\
-concept:(q6i) \pau=1000\ Climbing the Pyynikki ridge is good for your health! Once there, you want to taste the munkkis! \pau=1000\
-concept:(q7i) \pau=1000\ Did you know that Pispala Shot tower will be 110 years old this year? \pau=1000\
-concept:(q8i) \pau=1000\In Särkänniemi theme park, you can also find the Planetarium, the Aquarium, the Näsinneula Observation Tower, and the indoors activity park SuperPark. It is a good place for rainy days as well! \pau=1000\
-concept:(q9i) \pau=1000\ Tampere Cathedral is magnificent also from outside! \pau=1000\
-concept:(q10i) \pau=1000\ The idea of the tunnel was to raft timber from Näsijärvi to Pyhäjärvi. However, it was never needed to this purpose and remained unused for over 40 years, until it was opened for walking and cycling in 2013. \pau=1000\
-concept:(q11i) \pau=1000\ In addition to the restaurant there are beaches, public sauna and natural tracks in Viikinsaari, making it a very nice place for a day trip! \pau=1000\
-concept:(q12i) \pau=1000\ Hiedanranta is a new city district that is still developing. Various festivals and events are held there during the summer. \pau=1000\
-concept:(q13i) \pau=1000\ Aunes bridge is over a hundred year old granite bridge located in the area of Teisko. The bridge crosses a inland fjord in Näsijärvi. \pau=1000\
-concept:(q14i) \pau=1000\ One of Tampere's many public saunas is located in Rauhaniemi. Saunas are very popular among humans. However, I dare not to go there, because I would melt! \pau=1000\
-concept:(q15i) \pau=1000\ Moomin museum is enjoyable for children, adults and even robots! \pau=1000\
+concept:(q1i) \pau=1000\ The famous singing fish toy "Big Mouth Billy Bass" is an animatronic novelty—not a true robot with intelligent behavior. \pau=1000\
+concept:(q2i) \pau=1000\ Vacuum robots, like a Roomba, are built purely for a task and do not mimic human appearance like a humanoid robot. \pau=1000\
+concept:(q3i) \pau=1000\ Although the singing cactus can move and produce sounds, it lacks the sophisticated interactive and social capabilities of social robots. \pau=1000\
+concept:(q4i) \pau=1000\ The sale robotti is designed for retail purposes and does not possess the features typically built into educational robots for interactive learning. \pau=1000\
+concept:(q5i) \pau=1000\ NASA's robots are engineered for space and exploration tasks and are not intended for the compassionate roles seen in elder care robots. \pau=1000\
 
 ^start(animations/Stand/Waiting/AirGuitar_1) \pau=20000\
 
 u:(e:onStart) $html="en/quiz-start-en.html" ^gotoReactivate(intro)
  
-proposal: %intro I've been visiting different attractions and places in Tampere and took a lots of pictures from my journey. Would you like to guess the places I visited?
+proposal: %intro I've been experimenting with various robotic designs and functionalities. Would you like to test your robot knowledge?
     u1:(~affirmation) ~start_quiz ^gotoReactivate(start)
     u1:(~denial) $onStopped=1
     u1:(e:orientation/answerContinue) ~start_quiz ^gotoReactivate(start)
@@ -65,102 +45,97 @@ proposal: %next \pau=500\ Let's continue \pau=1000\ Next question ^gotoReactivat
 proposal: %next_q ^gotoRandom(question)
 
 u:(e:orientation/allAsked) ^gotoReactivate(end)
-proposal: %end Thank you for playing
+proposal: %end Thank you for playing the robot quiz!
     u1:([cheers thanks "bye bye" bye "see you" "thank you" finish]) $Orientation/Exit=1 
 
 u:(e:orientation/answerContinue) ^gotoReactivate(counter)
 
-#Q1
+# Q1
 proposal: %question $html="en/quiz1.html" ~q1
-    #Button answers
-    u1:(e:orientation/answerRight) ~correct this is from Amuri ^gotoReactivate(info1)
-    u1:(e:orientation/answerWrong) ~wrong this is Amuri ^gotoReactivate(info1)
-    #Voice answers
-    u1:(["Lauri Viidas" "birth home"])     $voice_ans="en/quiz1_ans.html" $orientation/answerWrong=1 ~wrong ^gotoReactivate(info1)
-    u1:([Amuri Museum "Workers Housing"])  $voice_ans="en/quiz1_ans.html" $orientation/answerRight=1 ~correct ^gotoReactivate(info1)   
-    u1:([Tallipiha])                    $voice_ans="en/quiz1_ans.html" $orientation/answerWrong=1 ~wrong ^gotoReactivate(info1)
+    # Button answers
+    u1:(e:orientation/answerRight) ~correct fish ^gotoReactivate(info1)
+    u1:(e:orientation/answerWrong) ~wrong furhat ^gotoReactivate(info1)
+    # Voice answers
+    u1:(["toy"]) $voice_ans="en/quiz1_ans.html" $orientation/answerWrong=1 ~wrong toy ^gotoReactivate(info1)
+    u1:(["singing fish"]) $voice_ans="en/quiz1_ans.html" $orientation/answerRight=1 ~correct fish ^gotoReactivate(info1)
 proposal: %info1 ~more
-    #Button input
+    # Button input
     u1:(e:orientation/info) ~q1i
         u2:(~continue) ^gotoReactivate(counter)
     u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
-    #Voice input
+    # Voice input
     u1:(~more-info) $voice_ans="en/quiz1_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
 
-#Q2
+# Q2
 proposal: %question $html="en/quiz2.html" ~q2
-    #button answers
-    u1:(e:orientation/answerRight) ~correct Hatanpää mansion ^gotoReactivate(info2)
-    u1:(e:orientation/answerWrong) ~wrong this is hatanpää mansion ^gotoReactivate(info2)
-    #voice answers
-    u1:([hatanpää])                 $voice_ans="en/quiz2_ans.html" $orientation/answerRight=1 ~correct hatanpää mansion ^gotoReactivate(info2)
-    u1:([viikinsaari restaurant]) $voice_ans="en/quiz2_ans.html" $orientation/answerWrong=1 ~wrong This is hatanpää mansion  ^gotoReactivate(info2)
-    u1:([haihara])                 $voice_ans="en/quiz2_ans.html" $orientation/answerWrong=1 ~wrong This is hatanpää mansion ^gotoReactivate(info2)  
+    # Button answers
+    u1:(e:orientation/answerRight) ~correct vaccuum ^gotoReactivate(info2)
+    u1:(e:orientation/answerWrong) ~wrong c3po ^gotoReactivate(info2)
+    # Voice answers
+    u1:(["tesla_robot"]) $voice_ans="en/quiz2_ans.html" $orientation/answerWrong=1 ~wrong tesla_robot ^gotoReactivate(info2)
+    u1:(["vaccuum"]) $voice_ans="en/quiz2_ans.html" $orientation/answerRight=1 ~correct vaccuum ^gotoReactivate(info2)
 proposal: %info2 ~more
-    #Button input
+    # Button input
     u1:(e:orientation/info) ~q2i
          u2:(~continue) ^gotoReactivate(counter)
     u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
-    #Voice input
+    # Voice input
     u1:(~more-info) $voice_ans="en/quiz2_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
-        
 
-#Q3 
+# Q3 
 proposal: %question $html="en/quiz3.html" ~q3
-    #button answers
-    u1:(e:orientation/answerRight) ~correct market hall ^gotoReactivate(info3)
-    u1:(e:orientation/answerWrong) ~wrong market hall ^gotoReactivate(info3)
-    #voice answers
-    u1:([sokos])        $voice_ans="en/quiz3_ans.html" ~wrong $orientation/answerWrong=1 market hall ^gotoReactivate(info3)
-    u1:(["Ratina mall"])                $voice_ans="en/quiz3_ans.html" ~wrong $orientation/answerWrong=1 market hall  ^gotoReactivate(info3)
-    u1:(["market hall"])                 $voice_ans="en/quiz3_ans.html" ~correct $orientation/answerRight=1 market hall ^gotoReactivate(info3)  
+    # Button answers
+    u1:(e:orientation/answerRight) ~correct singing_cactus ^gotoReactivate(info3)
+    u1:(e:orientation/answerWrong) ~wrong factory_bot ^gotoReactivate(info3)
+    # Voice answers
+    u1:(["aibo"]) $voice_ans="en/quiz3_ans.html" $orientation/answerWrong=1 ~wrong aibo ^gotoReactivate(info3)
+    u1:(["singing cactus"]) $voice_ans="en/quiz3_ans.html" $orientation/answerRight=1 ~correct singing_cactus ^gotoReactivate(info3)
 proposal: %info3 ~more
-    #Button input
+    # Button input
     u1:(e:orientation/info) ~q3i
         u2:(~continue) ^gotoReactivate(counter)
     u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
-    #Voice input
+    # Voice input
     u1:(~more-info) $voice_ans="en/quiz3_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
     
-#Q4 
+# Q4 
 proposal: %question $html="en/quiz4.html" ~q4
-    #button answers
-    u1:(e:orientation/answerRight) ~correct Näsilinna ^gotoReactivate(info4)
-    u1:(e:orientation/answerWrong) ~wrong näsilinna ^gotoReactivate(info4)
-    #voice answers
-    u1:([pyynikki pyynikinlinna])             $voice_ans="en/quiz4_ans.html" ~wrong $orientation/answerWrong=1 näsilinna ^gotoReactivate(info4)
-    u1:([Näsilinna])                          $voice_ans="en/quiz4_ans.html" ~correct $orientation/answerRight=1 näsilinna  ^gotoReactivate(info4)
-    u1:([Hatanpää mansion])                   $voice_ans="en/quiz4_ans.html" ~wrong $orientation/answerWrong=1 näsilinna ^gotoReactivate(info4)  
+    # Button answers
+    u1:(e:orientation/answerRight) ~correct sale_robotti ^gotoReactivate(info4)
+    u1:(e:orientation/answerWrong) ~wrong pepper ^gotoReactivate(info4)
+    # Voice answers
+    u1:(["mentor_bot"]) $voice_ans="en/quiz4_ans.html" $orientation/answerWrong=1 ~wrong mentor_bot ^gotoReactivate(info4)
+    u1:(["sale robotti"]) $voice_ans="en/quiz4_ans.html" $orientation/answerRight=1 ~correct sale_robotti ^gotoReactivate(info4)
 proposal: %info4 ~more
-    #Button input
+    # Button input
     u1:(e:orientation/info) ~q4i
         u2:(~continue) ^gotoReactivate(counter)
     u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
-    #Voice input
+    # Voice input
     u1:(~more-info) $voice_ans="en/quiz4_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
            
-#Q5 
+# Q5 
 proposal: %question $html="en/quiz5.html" ~q5
-    u1:(e:orientation/answerRight) ~correct Pyhäjärvi ^gotoReactivate(info5)
-    u1:(e:orientation/answerWrong) ~wrong pyhäjärvi ^gotoReactivate(info5)
-    #voice answers
-    u1:([pyhäjärvi pyhä])             $voice_ans="en/quiz5_ans.html" ~correct Pyhäjärvi $orientation/answerRight=1 ^gotoReactivate(info5)
-    u1:([näsijärvi])                  $voice_ans="en/quiz5_ans.html" ~wrong pyhäjärvi $orientation/answerWrong=1 ^gotoReactivate(info5)
-    u1:([särkijärvi])                 $voice_ans="en/quiz5_ans.html" ~wrong pyhäjärvi $orientation/answerWrong=1 ^gotoReactivate(info5) 
+    # Button answers
+    u1:(e:orientation/answerRight) ~correct NASA_robot ^gotoReactivate(info5)
+    u1:(e:orientation/answerWrong) ~wrong paro ^gotoReactivate(info5)
+    # Voice answers
+    u1:(["care_robot"]) $voice_ans="en/quiz5_ans.html" $orientation/answerWrong=1 ~wrong care_robot ^gotoReactivate(info5)
+    u1:(["NASA robot"]) $voice_ans="en/quiz5_ans.html" $orientation/answerRight=1 ~correct NASA_robot ^gotoReactivate(info5)
 proposal: %info5 ~more
-    #Button input
+    # Button input
     u1:(e:orientation/info) ~q5i
         u2:(~continue) ^gotoReactivate(counter)
     u1:(e:orientation/answerContinue) ^gotoReactivate(counter)
-    #Voice input
+    # Voice input
     u1:(~more-info) $voice_ans="en/quiz5_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
