@@ -7,7 +7,7 @@
                         <meta content='width=1280, user-scalable=0' name='viewport' />
                         <script src="/libs/qimessaging/1.0/qimessaging.js"></script>
 
-                        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Ubuntu" rel="stylesheet"> 
+                        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Ubuntu" rel="stylesheet">
 
                 <link rel="apple-touch-icon" sizes="57x57" href="<?= SITEPATH ?>img/ico/apple-icon-57x57.png">
                 <link rel="apple-touch-icon" sizes="60x60" href="<?= SITEPATH ?>img/ico/apple-icon-60x60.png">
@@ -67,12 +67,12 @@
                         <div class="row" style="margin: 20px 0; display: flex; align-items: center;">
                                 <!-- Left column: Image -->
                                 <div class="col-xs-6" style="text-align: center;">
-                                        
+
                 <div class="correct-answer-image">
                     <img src="../site/img/robot10.png" alt="Correct answer" style="max-width: 100%; max-height: 40vh; width: auto; height: auto;">
                     <h3 style="visibility: hidden;" data-correct-option="sale_robotti">sale_robotti</h3>
                 </div>
-            
+
                                 </div>
                                 <!-- Right column: Text -->
                                 <div class="col-xs-6" style="text-align: left;">
@@ -97,7 +97,7 @@
 
                 var audio = new Audio('../change_screen.ogg');
                 document.getElementById("question").innerHTML = getUrlVars()["question"];
-                
+
                 session.service('ALMemory').done(function(ALMemory) {
                         ALMemory.raiseEvent("orientation/silence", 1);
                         ALMemory.raiseEvent("orientation/say_info", "I wish I could learn, but this one didn't get the memo.");
