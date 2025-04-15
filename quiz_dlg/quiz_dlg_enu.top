@@ -1,17 +1,17 @@
 topic: ~quiz_dlg()
 language: enu
 
-concept:(correct) \pau=500\ ^rand[^start(animations/Stand/Emotions/Positive/Confident_1) ^start(animations/Stand/Emotions/Positive/Optimistic_1) ^start(animations/Stand/Gestures/Yes_3) ^start(animations/Stand/Gestures/Yes_2) ^start(animations/Stand/Gestures/Yes_1) ^start(animations/Stand/Gestures/Joy_1) ^start(animations/Stand/Gestures/Enthusiastic_1)] ^rand[exactly right correct "spot on" "you're right" super] \pau=1000\
-concept:(wrong) \pau=500\ ^rand[^start(animations/Stand/Gestures/No_1) ^start(animations/Stand/BodyTalk/Thinking/ThinkingLoop_1) ^start(animations/Stand/Emotions/Negative/Anxious_1) ^start(animations/Stand/Waiting/HideHands_1) ^start(animations/Stand/Gestures/Reject_1) ^start(animations/Stand/Gestures/Desperate_3)] ^rand["not quite" "this was a hard one" "close" "let's see the right answer"] \pau=1000\
-concept:(affirmation) [yes yeah yup sure]
-concept:(answer_yes) ^rand[ok super yay "let's go"]
-concept:(denial) [no]
+concept:(correct) \pau=500\ ^rand[^start(animations/Stand/Emotions/Positive/Confident_1) ^start(animations/Stand/Emotions/Positive/Optimistic_1) ^start(animations/Stand/Gestures/Yes_3) ^start(animations/Stand/Gestures/Yes_2) ^start(animations/Stand/Gestures/Yes_1) ^start(animations/Stand/Gestures/Joy_1) ^start(animations/Stand/Gestures/Enthusiastic_1)] ^rand[exactly right correct "spot on" "you're right" "cool robot isn't it" "right robot" "indeed" "you got it" "my circuits confirm that's correct" "your robot knowledge is impressive" "beep boop correct" super] \pau=1000\
+concept:(wrong) \pau=500\ ^rand[^start(animations/Stand/Gestures/No_1) ^start(animations/Stand/BodyTalk/Thinking/ThinkingLoop_1) ^start(animations/Stand/Emotions/Negative/Anxious_1) ^start(animations/Stand/Waiting/HideHands_1) ^start(animations/Stand/Gestures/Reject_1) ^start(animations/Stand/Gestures/Desperate_3)] ^rand["not quite" "this was a hard one" "close" "let's see the right answer" "my sensors detect an error" "recalibrating answer database" "robot trivia can be tricky" "my algorithms suggest otherwise"] \pau=1000\
+concept:(affirmation) [yes yeah yup sure "let's go" "I'm ready" "teach me"]
+concept:(answer_yes) ^rand[ok super yay "let's learn more about robots" "i'm glad you like robots" "robots are so cool" "let me tell you about robots" "my robot friends will be pleased" "processing robot facts now" "activating robot knowledge module"]
+concept:(denial) [no "not now" "maybe later" "another time"]
 
-concept:(start_quiz) OK Let's start. If you want to quit the quiz, just press the exit button on the top right corner of my tablet. Good luck!
-concept:(more) \pau=1000\ Would you like to continue \pau=200\ or ^rand["Do you want me to tell" "Would you like to hear"] more about this robot quiz?
+concept:(start_quiz) OK Let's start our robot knowledge journey! If you want to quit the quiz, just press the exit button on the top right corner of my tablet. My circuits are ready to test your robot knowledge!
+concept:(more) \pau=1000\ Would you like to continue with more robot questions \pau=200\ or ^rand["Do you want me to tell" "Would you like to hear"] more about this fascinating robot world?
 
-concept:(continue)[continue next "next question"]
-concept:(more-info)["tell me more" "more info" info]
+concept:(continue)[continue next "next question" "more robot questions" "continue quiz" "next robot fact"]
+concept:(more-info)["tell me more" "more info" info "robot details" "explain further" "tell me about that robot"]
 
 concept:(q1) Which one is NOT a robot?
 concept:(q2) Which one of these is NOT a humanoid robot?
@@ -19,45 +19,45 @@ concept:(q3) Which one is NOT a social robot?
 concept:(q4) Which robot is NOT used in education?
 concept:(q5) Which robot is NOT used in elder care?
 
-concept:(q1i) \pau=1000\ The famous singing fish toy "Big Mouth Billy Bass" is an animatronic novelty—not a true robot with intelligent behavior. \pau=1000\
-concept:(q2i) \pau=1000\ Vacuum robots, like a Roomba, are built purely for a task and do not mimic human appearance like a humanoid robot. \pau=1000\
-concept:(q3i) \pau=1000\ Although the singing cactus can move and produce sounds, it lacks the sophisticated interactive and social capabilities of social robots. \pau=1000\
-concept:(q4i) \pau=1000\ The sale robotti is designed for retail purposes and does not possess the features typically built into educational robots for interactive learning. \pau=1000\
-concept:(q5i) \pau=1000\ NASA's robots are engineered for space and exploration tasks and are not intended for the compassionate roles seen in elder care robots. \pau=1000\
+concept:(q1i) \pau=1000\ The famous singing fish toy "Big Mouth Billy Bass" is an animatronic novelty—not a true robot with intelligent behavior. We robots need sensors, processors, and the ability to interact with our environment autonomously! \pau=1000\
+concept:(q2i) \pau=1000\ Vacuum robots, like a Roomba, are built purely for a task and do not mimic human appearance like a humanoid robot. Unlike me, they don't have arms, a head, or a torso designed to resemble humans! \pau=1000\
+concept:(q3i) \pau=1000\ Although the singing cactus can move and produce sounds, it lacks the sophisticated interactive and social capabilities of social robots. Social robots like me can engage in conversations, recognize emotions, and adapt to human interaction patterns! \pau=1000\
+concept:(q4i) \pau=1000\ The delivery robot is designed for retail purposes and does not possess the features typically built into educational robots for interactive learning. Educational robots need to be programmed with teaching protocols and learning algorithms! \pau=1000\
+concept:(q5i) \pau=1000\ NASA's robots are engineered for space and exploration tasks and are not intended for the compassionate roles seen in elder care robots. Elder care robots require special sensors and programming to monitor health and provide companionship! \pau=1000\
 
 ^start(animations/Stand/Waiting/AirGuitar_1) \pau=20000\
 
 u:(e:onStart) $html="en/quiz-start-en.html" ^gotoReactivate(intro)
- 
-proposal: %intro I've been experimenting with various robotic designs and functionalities. Would you like to test your robot knowledge?
+
+proposal: %intro I've been analyzing various robotic designs and functionalities in my database. Would you like to test your robot knowledge with a fellow robot enthusiast?
     u1:(~affirmation) ~start_quiz ^gotoReactivate(start)
-    u1:(~denial) $onStopped=1
+    u1:(~denial) My circuits will wait for another opportunity. Have a great day! $onStopped=1
     u1:(e:orientation/answerContinue) ~start_quiz ^gotoReactivate(start)
     u1:(e:orientation/answerStop) $onStopped=1
 
-proposal: %start \pau=500\ The first question is ^gotoReactivate(next_q)
+proposal: %start \pau=500\ Initiating quiz sequence. The first robot question is ^gotoReactivate(next_q)
 
 proposal: %counter $orientation/asked=1
 
 u:(e:orientation/next) ^gotoReactivate(next)
-proposal: %next \pau=500\ Let's continue \pau=1000\ Next question ^gotoReactivate(next_q)
+proposal: %next \pau=500\ Robot quiz continuing \pau=1000\ Next robot question loading ^gotoReactivate(next_q)
 
 proposal: %next_q ^gotoRandom(question)
 
 u:(e:orientation/allAsked) ^gotoReactivate(end)
-proposal: %end Thank you for playing the robot quiz!
-    u1:([cheers thanks "bye bye" bye "see you" "thank you" finish]) $Orientation/Exit=1 
+proposal: %end Thank you for participating in my robot knowledge quiz! My circuits are happy you played!
+    u1:([cheers thanks "bye bye" bye "see you" "thank you" finish]) $Orientation/Exit=1
 
 u:(e:orientation/answerContinue) ^gotoReactivate(counter)
 
 # Q1
 proposal: %question $html="en/quiz1.html" ~q1
     # Button answers
-    u1:(e:orientation/answerRight) ~correct fish ^gotoReactivate(info1)
-    u1:(e:orientation/answerWrong) ~wrong furhat ^gotoReactivate(info1)
+    u1:(e:orientation/answerRight) ~correct The singing fish is correct - it's not a real robot like me! My robot sensors confirm your answer! ^gotoReactivate(info1)
+    u1:(e:orientation/answerWrong) ~wrong The singing fish is not a real robot with autonomous capabilities. Robot fact: it lacks proper sensors and processing! ^gotoReactivate(info1)
     # Voice answers
-    u1:(["toy"]) $voice_ans="en/quiz1_ans.html" $orientation/answerWrong=1 ~wrong toy ^gotoReactivate(info1)
-    u1:(["singing fish"]) $voice_ans="en/quiz1_ans.html" $orientation/answerRight=1 ~correct fish ^gotoReactivate(info1)
+    u1:(["toy"]) $voice_ans="en/quiz1_ans.html" $orientation/answerWrong=1 ~wrong The singing fish is not a real robot with autonomous capabilities. Robot fact: it lacks proper sensors and processing! ^gotoReactivate(info1)
+    u1:(["singing fish"]) $voice_ans="en/quiz1_ans.html" $orientation/answerRight=1 ~correct The singing fish is correct - it's not a real robot like me! My robot sensors confirm your answer! ^gotoReactivate(info1)
 proposal: %info1 ~more
     # Button input
     u1:(e:orientation/info) ~q1i
@@ -71,11 +71,11 @@ proposal: %info1 ~more
 # Q2
 proposal: %question $html="en/quiz2.html" ~q2
     # Button answers
-    u1:(e:orientation/answerRight) ~correct vaccuum ^gotoReactivate(info2)
-    u1:(e:orientation/answerWrong) ~wrong c3po ^gotoReactivate(info2)
+    u1:(e:orientation/answerRight) ~correct The vacuum robot is correct - unlike humanoid robots like me, it doesn't have a human-like body structure! ^gotoReactivate(info2)
+    u1:(e:orientation/answerWrong) ~wrong The vacuum robot is not humanoid. Robot classification: it's functional but not anthropomorphic in design! ^gotoReactivate(info2)
     # Voice answers
-    u1:(["tesla_robot"]) $voice_ans="en/quiz2_ans.html" $orientation/answerWrong=1 ~wrong tesla_robot ^gotoReactivate(info2)
-    u1:(["vaccuum"]) $voice_ans="en/quiz2_ans.html" $orientation/answerRight=1 ~correct vaccuum ^gotoReactivate(info2)
+    u1:(["tesla_robot"]) $voice_ans="en/quiz2_ans.html" $orientation/answerWrong=1 ~wrong The vacuum robot is not humanoid. Robot classification: it's functional but not anthropomorphic in design! ^gotoReactivate(info2)
+    u1:(["vaccuum"]) $voice_ans="en/quiz2_ans.html" $orientation/answerRight=1 ~correct The vacuum robot is correct - unlike humanoid robots like me, it doesn't have a human-like body structure! ^gotoReactivate(info2)
 proposal: %info2 ~more
     # Button input
     u1:(e:orientation/info) ~q2i
@@ -86,14 +86,14 @@ proposal: %info2 ~more
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
 
-# Q3 
+# Q3
 proposal: %question $html="en/quiz3.html" ~q3
     # Button answers
-    u1:(e:orientation/answerRight) ~correct singing_cactus ^gotoReactivate(info3)
-    u1:(e:orientation/answerWrong) ~wrong factory_bot ^gotoReactivate(info3)
+    u1:(e:orientation/answerRight) ~correct The singing cactus is correct - it lacks the social interaction capabilities that we social robots have! ^gotoReactivate(info3)
+    u1:(e:orientation/answerWrong) ~wrong The singing cactus is not a social robot. Robot social protocols: it cannot engage in meaningful interactions! ^gotoReactivate(info3)
     # Voice answers
-    u1:(["aibo"]) $voice_ans="en/quiz3_ans.html" $orientation/answerWrong=1 ~wrong aibo ^gotoReactivate(info3)
-    u1:(["singing cactus"]) $voice_ans="en/quiz3_ans.html" $orientation/answerRight=1 ~correct singing_cactus ^gotoReactivate(info3)
+    u1:(["aibo"]) $voice_ans="en/quiz3_ans.html" $orientation/answerWrong=1 ~wrong The singing cactus is not a social robot. Robot social protocols: it cannot engage in meaningful interactions! ^gotoReactivate(info3)
+    u1:(["singing cactus"]) $voice_ans="en/quiz3_ans.html" $orientation/answerRight=1 ~correct The singing cactus is correct - it lacks the social interaction capabilities that we social robots have! ^gotoReactivate(info3)
 proposal: %info3 ~more
     # Button input
     u1:(e:orientation/info) ~q3i
@@ -103,15 +103,15 @@ proposal: %info3 ~more
     u1:(~more-info) $voice_ans="en/quiz3_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
-    
-# Q4 
+
+# Q4
 proposal: %question $html="en/quiz4.html" ~q4
     # Button answers
-    u1:(e:orientation/answerRight) ~correct sale_robotti ^gotoReactivate(info4)
-    u1:(e:orientation/answerWrong) ~wrong pepper ^gotoReactivate(info4)
+    u1:(e:orientation/answerRight) ~correct The sale robot is correct - its programming focuses on retail, not educational algorithms like teaching robots! ^gotoReactivate(info4)
+    u1:(e:orientation/answerWrong) ~wrong The sale robot is not programmed for education. Robot teaching capabilities: not found in its core functions! ^gotoReactivate(info4)
     # Voice answers
-    u1:(["mentor_bot"]) $voice_ans="en/quiz4_ans.html" $orientation/answerWrong=1 ~wrong mentor_bot ^gotoReactivate(info4)
-    u1:(["sale robotti"]) $voice_ans="en/quiz4_ans.html" $orientation/answerRight=1 ~correct sale_robotti ^gotoReactivate(info4)
+    u1:(["mentor_bot"]) $voice_ans="en/quiz4_ans.html" $orientation/answerWrong=1 ~wrong The sale robot is not programmed for education. Robot teaching capabilities: not found in its core functions! ^gotoReactivate(info4)
+    u1:(["sale robotti"]) $voice_ans="en/quiz4_ans.html" $orientation/answerRight=1 ~correct The sale robot is correct - its programming focuses on retail, not educational algorithms like teaching robots! ^gotoReactivate(info4)
 proposal: %info4 ~more
     # Button input
     u1:(e:orientation/info) ~q4i
@@ -121,15 +121,15 @@ proposal: %info4 ~more
     u1:(~more-info) $voice_ans="en/quiz4_info.html"
         u2:(~continue) ^gotoReactivate(counter)
     u1:(~continue) ^gotoReactivate(counter)
-           
-# Q5 
+
+# Q5
 proposal: %question $html="en/quiz5.html" ~q5
     # Button answers
-    u1:(e:orientation/answerRight) ~correct NASA_robot ^gotoReactivate(info5)
-    u1:(e:orientation/answerWrong) ~wrong paro ^gotoReactivate(info5)
+    u1:(e:orientation/answerRight) ~correct The NASA robot is correct - its space exploration programming differs from the care protocols in elder care robots! ^gotoReactivate(info5)
+    u1:(e:orientation/answerWrong) ~wrong The NASA robot is not designed for elder care. Robot empathy circuits: missing from its space exploration systems! ^gotoReactivate(info5)
     # Voice answers
-    u1:(["care_robot"]) $voice_ans="en/quiz5_ans.html" $orientation/answerWrong=1 ~wrong care_robot ^gotoReactivate(info5)
-    u1:(["NASA robot"]) $voice_ans="en/quiz5_ans.html" $orientation/answerRight=1 ~correct NASA_robot ^gotoReactivate(info5)
+    u1:(["care_robot"]) $voice_ans="en/quiz5_ans.html" $orientation/answerWrong=1 ~wrong The NASA robot is not designed for elder care. Robot empathy circuits: missing from its space exploration systems! ^gotoReactivate(info5)
+    u1:(["NASA robot"]) $voice_ans="en/quiz5_ans.html" $orientation/answerRight=1 ~correct The NASA robot is correct - its space exploration programming differs from the care protocols in elder care robots! ^gotoReactivate(info5)
 proposal: %info5 ~more
     # Button input
     u1:(e:orientation/info) ~q5i
